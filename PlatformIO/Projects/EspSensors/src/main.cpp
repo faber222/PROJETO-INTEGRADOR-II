@@ -3,7 +3,7 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_I2CDevice.h>
 
-// #include <WiFi.h>
+#include <WiFi.h>
 // #include <WebServer.h>
 #include "DHT.h"
 #include <SPI.h>
@@ -18,15 +18,32 @@ ADS1115 ADS(0x48);
 float Temperature;
 float Humidity;
 
+const char* ssid;
+const char* password;
+
+WiFiServer server(80);
+
 void setup() {
   Serial.begin(9600);
   delay(100);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED){
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("Wifi conectado!");
+  Serial.print("Endereço de ip: ");
+  Serial.println(WiFi.localIP());
 
   pinMode(DHTPin, INPUT);
   // pinMode();
   ADS.begin();
   dht.begin();
 
+  server.begin();
 }
 
 void loop() {
