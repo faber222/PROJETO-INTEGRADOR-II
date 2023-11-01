@@ -26,4 +26,6 @@ urlpatterns = [
     path('signup/',views.signup, name='signup'),
     path('profile/',views.profile, name='profile'),
     path('get_temperature/', views.get_temperature, name='get_temperature'),
+    path('get_humidity/', views.get_humidity, name='get_humidity'),
+
 ]
