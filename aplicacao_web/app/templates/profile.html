@@ -1,14 +1,107 @@
-{% extends 'base.html' %}
-  
-{% block title %}Login{% endblock %}
-  
-{% block content %}
-   <h2>Welcome!</h2>
-   {% if user.is_authenticated %}
-      Hi {{ user.username }}!
-      <a href="/signout" class="btn btn-danger">Logout</a>
-    {% else %}
-      <a href="/signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Login</a> 
-      <a href="/signup" class="btn btn-success">Signup</a>
-    {% endif %}
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ESPSENSORS - Perfil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        #sensor-readings {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sensor-reading {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .sensor-info {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ESPSENSORS</h1>
+        <p>Seja bem-vindo, {{ user.username }}!</p>
+    </header>
+
+    <div id="sensor-readings">
+        <h2>Leituras dos Sensores:</h2>
+        <!-- As leituras dos sensores serão preenchidas aqui usando JavaScript -->
+    </div>
+
+    <script>
+        // Função para obter a temperatura da API
+        function getTemperature() {
+            fetch('/get_temperature/')  // Atualize a URL conforme necessário
+                .then(response => response.json())
+                .then(data => {
+                    const sensorReadings = document.getElementById('sensor-readings');
+                    const sensorReading = document.createElement('div');
+                    sensorReading.className = 'sensor-reading';
+
+                    const sensorInfo = document.createElement('div');
+                    sensorInfo.className = 'sensor-info';
+                    sensorInfo.innerHTML = `Sensor: ${data.sensor_name}, Temperatura: ${data.temperature}°C`;
+
+                    sensorReading.appendChild(sensorInfo);
+                    sensorReadings.appendChild(sensorReading);
+                })
+                .catch(error => {
+                    console.error('Erro ao obter temperatura: ', error);
+                });
+        }
+
+        // Função para obter a umidade da API
+        function getHumidity() {
+            fetch('/get_humidity/')  // Atualize a URL conforme necessário
+                .then(response => response.json())
+                .then(data => {
+                    const sensorReadings = document.getElementById('sensor-readings');
+                    const sensorReading = document.createElement('div');
+                    sensorReading.className = 'sensor-reading';
+
+                    const sensorInfo = document.createElement('div');
+                    sensorInfo.className = 'sensor-info';
+                    sensorInfo.innerHTML = `Sensor: ${data.sensor_name}, Umidade: ${data.humidity}%`;
+
+                    sensorReading.appendChild(sensorInfo);
+                    sensorReadings.appendChild(sensorReading);
+                })
+                .catch(error => {
+                    console.error('Erro ao obter umidade: ', error);
+                });
+        }
+
+        // Chame as funções para obter a temperatura e a umidade ao carregar a página
+        getTemperature();
+        getHumidity();
+    </script>
+</body>
+</html>

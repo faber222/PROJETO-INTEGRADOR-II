@@ -25,4 +25,5 @@ urlpatterns = [
     path('signout/',views.signout, name='signout'),
     path('signup/',views.signup, name='signup'),
     path('profile/',views.profile, name='profile'),
+    path('get_temperature/', views.get_temperature, name='get_temperature'),
 ]

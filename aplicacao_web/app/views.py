@@ -4,7 +4,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.shortcuts import HttpResponseRedirect
-  
+from django.http import JsonResponse
+
 def signup(request):
     if request.user.is_authenticated:
         return redirect('/')
@@ -51,3 +52,19 @@ def profile(request):
 def signout(request):
     logout(request)
     return redirect('/')
+
+def get_temperature(request):
+    # Simule a obtenção da temperatura de uma API externa
+    data = {
+        "sensor_name": "Sensor 1",
+        "temperature": 25.5
+    }
+    return JsonResponse(data)
+
+def get_humidity(request):
+    # Simule a obtenção da umidade de uma API externa
+    data = {
+        "sensor_name": "Sensor 1",
+        "humidity": 50.0
+    }
+    return JsonResponse(data)
