@@ -20,3 +20,66 @@
 1697686400: mosquitto version 2.0.18 running
 1697686556: mosquitto version 2.0.18 terminating
 1697686556: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1698892468: mosquitto version 2.0.18 starting
+1698892468: Config loaded from /mosquitto/config/mosquitto.conf.
+1698892468: Opening ipv4 listen socket on port 1883.
+1698892468: mosquitto version 2.0.18 running
+1698892964: mosquitto version 2.0.18 terminating
+1698892964: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1698893915: mosquitto version 2.0.18 starting
+1698893915: Config loaded from /mosquitto/config/mosquitto.conf.
+1698893915: Opening ipv4 listen socket on port 1883.
+1698893915: mosquitto version 2.0.18 running
+1698894120: New connection from 127.0.0.1:47690 on port 1883.
+1698894120: New client connected from 127.0.0.1:47690 as auto-E1B8C71E-3E2C-1604-28ED-C3F236516096 (p2, c1, k60).
+1698894191: New connection from 127.0.0.1:47844 on port 1883.
+1698894191: New client connected from 127.0.0.1:47844 as auto-22F034E9-F9F9-DB62-29EC-CC481D882DD6 (p2, c1, k60).
+1698894191: Client auto-22F034E9-F9F9-DB62-29EC-CC481D882DD6 disconnected.
+1698895716: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1698896021: mosquitto version 2.0.18 terminating
+1698896021: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1698896038: mosquitto version 2.0.18 starting
+1698896038: Config loaded from /mosquitto/config/mosquitto.conf.
+1698896038: Opening ipv4 listen socket on port 1883.
+1698896038: mosquitto version 2.0.18 running
+1698896041: mosquitto version 2.0.18 terminating
+1698896041: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1698896059: mosquitto version 2.0.18 starting
+1698896059: Config loaded from /mosquitto/config/mosquitto.conf.
+1698896059: Opening ipv4 listen socket on port 1883.
+1698896059: mosquitto version 2.0.18 running
+1698896063: New connection from 192.168.1.35:54845 on port 1883.
+1698896063: New client connected from 192.168.1.35:54845 as ESP32Client (p2, c1, k15).
+1698896093: New connection from 127.0.0.1:53326 on port 1883.
+1698896093: New client connected from 127.0.0.1:53326 as auto-DDD56E73-6553-98BA-F48C-0C55D3716C2E (p2, c1, k60).
+1698896320: New connection from 127.0.0.1:49876 on port 1883.
+1698896320: New client connected from 127.0.0.1:49876 as auto-6A9FD4D0-28C7-3552-4862-496415AE2F49 (p2, c1, k60).
+1698896320: Client auto-6A9FD4D0-28C7-3552-4862-496415AE2F49 disconnected.
+1698896331: New connection from 172.19.0.1:57884 on port 1883.
+1698896331: New client connected from 172.19.0.1:57884 as auto-EBDB8FC7-86F0-E620-28FF-3145248F88FB (p2, c1, k60).
+1698896331: Client auto-EBDB8FC7-86F0-E620-28FF-3145248F88FB disconnected.
+1698896349: New connection from 192.168.1.35:63914 on port 1883.
+1698896349: Client ESP32Client already connected, closing old connection.
+1698896349: New client connected from 192.168.1.35:63914 as ESP32Client (p2, c1, k15).
+1698896388: New connection from 192.168.1.35:64103 on port 1883.
+1698896388: Client ESP32Client already connected, closing old connection.
+1698896388: New client connected from 192.168.1.35:64103 as ESP32Client (p2, c1, k15).
+1698897859: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1698898537: New connection from 172.19.0.1:52530 on port 1883.
+1698898537: New client connected from 172.19.0.1:52530 as paho8644589845828 (p2, c1, k60).
+1698898587: Client paho8644589845828 closed its connection.
+1698898621: New connection from 172.19.0.1:43894 on port 1883.
+1698898621: New client connected from 172.19.0.1:43894 as paho8728418326492 (p2, c1, k60).
+1698898765: Client paho8728418326492 closed its connection.
+1698898772: New connection from 172.19.0.1:52938 on port 1883.
+1698898772: New client connected from 172.19.0.1:52938 as paho8879673781884 (p2, c1, k60).
+1698898925: Client paho8879673781884 closed its connection.
+1698898944: New connection from 172.19.0.1:40522 on port 1883.
+1698898944: New client connected from 172.19.0.1:40522 as paho9051746133075 (p2, c1, k60).
+1698899203: Client paho9051746133075 closed its connection.
+1698899352: New connection from 192.168.1.6:40136 on port 1883.
+1698899352: New client connected from 192.168.1.6:40136 as paho9459437183415 (p2, c1, k60).
+1698899493: Client paho9459437183415 closed its connection.
+1698899572: Client auto-DDD56E73-6553-98BA-F48C-0C55D3716C2E disconnected.
+1698899578: mosquitto version 2.0.18 terminating
+1698899578: Saving in-memory database to /mosquitto/data//mosquitto.db.
