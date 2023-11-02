@@ -83,3 +83,25 @@
 1698899572: Client auto-DDD56E73-6553-98BA-F48C-0C55D3716C2E disconnected.
 1698899578: mosquitto version 2.0.18 terminating
 1698899578: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1698960576: mosquitto version 2.0.18 starting
+1698960576: Config loaded from /mosquitto/config/mosquitto.conf.
+1698960576: Opening ipv4 listen socket on port 1883.
+1698960576: mosquitto version 2.0.18 running
+1698961510: New connection from 127.0.0.1:53910 on port 1883.
+1698961510: New client connected from 127.0.0.1:53910 as auto-B24265EE-4CA4-0FBA-892E-E510BD7FD1E9 (p2, c1, k60).
+1698961651: New connection from 192.168.1.35:56701 on port 1883.
+1698961651: New client connected from 192.168.1.35:56701 as ESP32Client (p2, c1, k15).
+1698962378: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1698963127: Client ESP32Client has exceeded timeout, disconnecting.
+1698963192: New connection from 192.168.1.35:52320 on port 1883.
+1698963192: New client connected from 192.168.1.35:52320 as ESP32Client (p2, c1, k15).
+1698963721: Client ESP32Client has exceeded timeout, disconnecting.
+1698964106: New connection from 192.168.1.35:64092 on port 1883.
+1698964106: New client connected from 192.168.1.35:64092 as ESP32Client (p2, c1, k15).
+1698964178: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1698964507: New connection from 127.0.0.1:34010 on port 1883.
+1698964507: New client connected from 127.0.0.1:34010 as auto-D069F876-7F94-039D-5EBC-5BDA28E82501 (p2, c1, k60).
+1698964557: New connection from 127.0.0.1:46122 on port 1883.
+1698964557: New client connected from 127.0.0.1:46122 as auto-A6C4E697-9062-1402-7FA2-DDBB7A6F4A53 (p2, c1, k60).
+1698964892: mosquitto version 2.0.18 terminating
+1698964892: Saving in-memory database to /mosquitto/data//mosquitto.db.

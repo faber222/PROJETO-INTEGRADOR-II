@@ -8,6 +8,8 @@
 #include "DHT.h"
 #include <SPI.h>
 #include <PubSubClient.h>
+#include <string>
+#include <iostream>
 
 #define DHTTYPE DHT22     // DHT 22  (AM2302), AM2321
 
@@ -23,6 +25,8 @@ const char* ssid = "FABER";
 const char* password = "faber180975";
 const char* mqtt_server = "192.168.1.6";
 const char* topic = "test";
+const char* tempTopic = "temperature";
+const char* humidityTopic = "humidity";
 
 WiFiServer server(80);
 WiFiClient espClient;
@@ -143,10 +147,15 @@ void loop() {
     dtostrf(Humidity, 1, 2, humString);
 
     String payload = String("Temperature: ") + String(tempString) + "°C, Humidity: " + String(humString) + "%";
+    String payloadTemp = String("Temperature: ") + String(tempString) + "ºC";
+    String payloadHumidity = "Humidity: " + String(humString) + "%";
+    
     client.publish(topic, ( char* ) payload.c_str());
+    client.publish(tempTopic, ( char* ) payloadTemp.c_str());
+    client.publish(humidityTopic, ( char* ) payloadHumidity.c_str());
 
     client.loop();
-    delay(1000);
+    delay(10000);
   
 }
 
