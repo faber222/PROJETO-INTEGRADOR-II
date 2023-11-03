@@ -23,7 +23,7 @@ float Humidity;
 
 const char* ssid = "FABER";
 const char* password = "faber180975";
-const char* mqtt_server = "192.168.1.6";
+const char* mqtt_server = "15.228.247.200";
 const char* topic = "test";
 const char* tempTopic = "temperature";
 const char* humidityTopic = "humidity";
@@ -155,7 +155,7 @@ void loop() {
     client.publish(humidityTopic, ( char* ) payloadHumidity.c_str());
 
     client.loop();
-    delay(10000);
+    delay(1000);
   
 }
 
