@@ -5,6 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.shortcuts import HttpResponseRedirect
 from django.http import JsonResponse
+from .models import DadosTemperaturaUmidade
 
 def signup(request):
     if request.user.is_authenticated:
@@ -25,7 +26,10 @@ def signup(request):
         return render(request, 'signup.html', {'form': form})
    
 def home(request): 
-    return render(request, 'home.html')
+    if request.user.is_authenticated:
+        return redirect('/profile')
+    else:
+        return render(request, 'home.html')
    
   
 def signin(request):
@@ -46,8 +50,15 @@ def signin(request):
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})
   
-def profile(request): 
-    return render(request, 'profile.html')
+def profile(request):
+    # Adicione a lógica para buscar os dados do histórico de temperatura e umidade
+    historico = DadosTemperaturaUmidade.objects.all()  # Substitua pela consulta correta
+
+    context = {
+        'historico': historico,
+    }
+
+    return render(request, 'profile.html', context)
    
 def signout(request):
     logout(request)
@@ -55,16 +66,25 @@ def signout(request):
 
 def get_temperature(request):
     # Simule a obtenção da temperatura de uma API externa
+    temperatura_atual = DadosTemperaturaUmidade.objects.latest('timestamp').temperatura
+
     data = {
-        "sensor_name": "Sensor 1",
-        "temperature": 25.5
+        'temperatura': temperatura_atual,
     }
     return JsonResponse(data)
 
 def get_humidity(request):
-    # Simule a obtenção da umidade de uma API externa
+    umidade_atual = DadosTemperaturaUmidade.objects.latest('timestamp').umidade
+
     data = {
-        "sensor_name": "Sensor 1",
-        "humidity": 50.0
+        'umidade': umidade_atual,
+    }
+    return JsonResponse(data)
+
+def get_latest_sensor_data(request):
+    latest_data = DadosTemperaturaUmidade.objects.latest('timestamp')
+    data = {
+        'temperatura': latest_data.temperatura,
+        'umidade': latest_data.umidade,
     }
     return JsonResponse(data)

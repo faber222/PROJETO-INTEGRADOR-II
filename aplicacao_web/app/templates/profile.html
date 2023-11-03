@@ -43,6 +43,23 @@
         .sensor-info {
             margin-top: 10px;
         }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -53,55 +70,82 @@
 
     <div id="sensor-readings">
         <h2>Leituras dos Sensores:</h2>
-        <!-- As leituras dos sensores serão preenchidas aqui usando JavaScript -->
+        <div class="sensor-reading" id="temperatura">Temperatura: Aguardando dados...</div>
+        <div class="sensor-reading" id="umidade">Umidade: Aguardando dados...</div>
+        <button id="mostrar-historico-btn">Mostrar Histórico de Temperatura e Umidade</button>
+    </div>
+
+    <div id="historico-table" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Data e Hora</th>
+                    <th>Temperatura (°C)</th>
+                    <th>Umidade (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                {% for dado in historico %}
+                <tr>
+                    <td>{{ dado.timestamp }}</td>
+                    <td>{{ dado.temperatura }}°C</td>
+                    <td>{{ dado.umidade }}%</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
     <script>
-        // Função para obter a temperatura da API
+        const mostrarHistoricoBtn = document.getElementById('mostrar-historico-btn');
+        const historicoTable = document.getElementById('historico-table');
+        const temperaturaDiv = document.getElementById('temperatura');
+        const umidadeDiv = document.getElementById('umidade');
+    
+        mostrarHistoricoBtn.addEventListener('click', () => {
+            if (historicoTable.style.display === 'none') {
+                historicoTable.style.display = 'block';  // Mostra a tabela ao clicar no botão
+                mostrarHistoricoBtn.textContent = 'Fechar Histórico de Temperatura e Umidade';
+            } else {
+                historicoTable.style.display = 'none';  // Oculta a tabela ao clicar novamente no botão
+                mostrarHistoricoBtn.textContent = 'Mostrar Histórico de Temperatura e Umidade';
+            }
+        });
+    
+        // Função para obter a temperatura atual
         function getTemperature() {
             fetch('/get_temperature/')  // Atualize a URL conforme necessário
                 .then(response => response.json())
                 .then(data => {
-                    const sensorReadings = document.getElementById('sensor-readings');
-                    const sensorReading = document.createElement('div');
-                    sensorReading.className = 'sensor-reading';
-
-                    const sensorInfo = document.createElement('div');
-                    sensorInfo.className = 'sensor-info';
-                    sensorInfo.innerHTML = `Sensor: ${data.sensor_name}, Temperatura: ${data.temperature}°C`;
-
-                    sensorReading.appendChild(sensorInfo);
-                    sensorReadings.appendChild(sensorReading);
+                    temperaturaDiv.textContent = `Temperatura: ${data.temperatura}°C`;
                 })
                 .catch(error => {
                     console.error('Erro ao obter temperatura: ', error);
                 });
         }
-
-        // Função para obter a umidade da API
+    
+        // Função para obter a umidade atual
         function getHumidity() {
             fetch('/get_humidity/')  // Atualize a URL conforme necessário
                 .then(response => response.json())
                 .then(data => {
-                    const sensorReadings = document.getElementById('sensor-readings');
-                    const sensorReading = document.createElement('div');
-                    sensorReading.className = 'sensor-reading';
-
-                    const sensorInfo = document.createElement('div');
-                    sensorInfo.className = 'sensor-info';
-                    sensorInfo.innerHTML = `Sensor: ${data.sensor_name}, Umidade: ${data.humidity}%`;
-
-                    sensorReading.appendChild(sensorInfo);
-                    sensorReadings.appendChild(sensorReading);
+                    umidadeDiv.textContent = `Umidade: ${data.umidade}%`;
                 })
                 .catch(error => {
                     console.error('Erro ao obter umidade: ', error);
                 });
         }
-
+    
         // Chame as funções para obter a temperatura e a umidade ao carregar a página
         getTemperature();
         getHumidity();
+    
+        // Crie um intervalo para atualizar os valores a cada 10 segundos
+        setInterval(() => {
+            getTemperature();
+            getHumidity();
+        }, 10000); // 10 segundos em milissegundos
     </script>
 </body>
 </html>
