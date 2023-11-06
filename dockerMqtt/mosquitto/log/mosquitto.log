@@ -1056,3 +1056,4 @@ To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
 1699244828: New connection from 161.22.62.155:22174 on port 1883.
 1699244828: New client connected from 161.22.62.155:22174 as ESP32Client (p2, c1, k15, u'esp').
 1699244833: Client auto-BE433206-E62A-3FBC-38CE-13CECCA2E613 disconnected.
+1699244882: Client ESP32Client has exceeded timeout, disconnecting.
