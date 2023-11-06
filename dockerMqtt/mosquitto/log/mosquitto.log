@@ -165,6 +165,904 @@
 1699236334: Saving in-memory database to /mosquitto/data//mosquitto.db.
 1699238135: Saving in-memory database to /mosquitto/data//mosquitto.db.
 1699239936: Saving in-memory database to /mosquitto/data//mosquitto.db.
+<<<<<<< HEAD
+1699242521: mosquitto version 2.0.18 starting
+1699242521: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242521: Opening ipv4 listen socket on port 1883.
+1699242521: mosquitto version 2.0.18 running
+1699242530: New connection from 161.22.62.155:22543 on port 1883.
+1699242530: New client connected from 161.22.62.155:22543 as ESP32Client (p2, c1, k15).
+1699242627: mosquitto version 2.0.18 terminating
+1699242627: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699242628: mosquitto version 2.0.18 starting
+1699242628: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242628: Error: Unable to open pwfile "./senhas".
+1699242628: Error opening password file "./senhas".
+1699242629: mosquitto version 2.0.18 starting
+1699242629: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242629: Error: Unable to open pwfile "./senhas".
+1699242629: Error opening password file "./senhas".
+1699242630: mosquitto version 2.0.18 starting
+1699242630: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242630: Error: Unable to open pwfile "./senhas".
+1699242630: Error opening password file "./senhas".
+1699242631: mosquitto version 2.0.18 starting
+1699242631: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242631: Error: Unable to open pwfile "./senhas".
+1699242631: Error opening password file "./senhas".
+1699242632: mosquitto version 2.0.18 starting
+1699242632: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242632: Error: Unable to open pwfile "./senhas".
+1699242632: Error opening password file "./senhas".
+1699242634: mosquitto version 2.0.18 starting
+1699242634: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242634: Error: Unable to open pwfile "./senhas".
+1699242634: Error opening password file "./senhas".
+1699242638: mosquitto version 2.0.18 starting
+1699242638: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242638: Error: Unable to open pwfile "./senhas".
+1699242638: Error opening password file "./senhas".
+1699242645: mosquitto version 2.0.18 starting
+1699242645: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242645: Error: Unable to open pwfile "./senhas".
+1699242645: Error opening password file "./senhas".
+1699242658: mosquitto version 2.0.18 starting
+1699242658: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242658: Error: Unable to open pwfile "./senhas".
+1699242658: Error opening password file "./senhas".
+1699242684: mosquitto version 2.0.18 starting
+1699242684: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242684: Error: Unable to open pwfile "./senhas".
+1699242684: Error opening password file "./senhas".
+1699242736: mosquitto version 2.0.18 starting
+1699242736: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242736: Error: Unable to open pwfile "./senhas".
+1699242736: Error opening password file "./senhas".
+1699242796: mosquitto version 2.0.18 starting
+1699242796: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242796: Error: Unable to open pwfile "./senhas".
+1699242796: Error opening password file "./senhas".
+1699242857: mosquitto version 2.0.18 starting
+1699242857: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242857: Error: Unable to open pwfile "./senhas".
+1699242857: Error opening password file "./senhas".
+1699242917: mosquitto version 2.0.18 starting
+1699242917: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242917: Error: Unable to open pwfile "./senhas".
+1699242917: Error opening password file "./senhas".
+1699242973: mosquitto version 2.0.18 starting
+1699242973: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242973: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699242973: Error: /mosquitto/config/passwords.txt is not a file.
+1699242973: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699242973: Error opening password file "/mosquitto/config/passwords.txt".
+1699242974: mosquitto version 2.0.18 starting
+1699242974: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242974: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699242974: Error: /mosquitto/config/passwords.txt is not a file.
+1699242974: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699242974: Error opening password file "/mosquitto/config/passwords.txt".
+1699242975: mosquitto version 2.0.18 starting
+1699242975: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242975: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699242975: Error: /mosquitto/config/passwords.txt is not a file.
+1699242975: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699242975: Error opening password file "/mosquitto/config/passwords.txt".
+1699242976: mosquitto version 2.0.18 starting
+1699242976: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242976: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699242976: Error: /mosquitto/config/passwords.txt is not a file.
+1699242976: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699242976: Error opening password file "/mosquitto/config/passwords.txt".
+1699242977: mosquitto version 2.0.18 starting
+1699242977: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242977: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699242977: Error: /mosquitto/config/passwords.txt is not a file.
+1699242977: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699242977: Error opening password file "/mosquitto/config/passwords.txt".
+1699242979: mosquitto version 2.0.18 starting
+1699242979: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242979: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699242979: Error: /mosquitto/config/passwords.txt is not a file.
+1699242979: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699242979: Error opening password file "/mosquitto/config/passwords.txt".
+1699242983: mosquitto version 2.0.18 starting
+1699242983: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242983: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699242983: Error: /mosquitto/config/passwords.txt is not a file.
+1699242983: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699242983: Error opening password file "/mosquitto/config/passwords.txt".
+1699242990: mosquitto version 2.0.18 starting
+1699242990: Config loaded from /mosquitto/config/mosquitto.conf.
+1699242990: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699242990: Error: /mosquitto/config/passwords.txt is not a file.
+1699242990: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699242990: Error opening password file "/mosquitto/config/passwords.txt".
+1699243003: mosquitto version 2.0.18 starting
+1699243003: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243003: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243003: Error: /mosquitto/config/passwords.txt is not a file.
+1699243003: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243003: Error opening password file "/mosquitto/config/passwords.txt".
+1699243029: mosquitto version 2.0.18 starting
+1699243029: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243029: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243029: Error: /mosquitto/config/passwords.txt is not a file.
+1699243029: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243029: Error opening password file "/mosquitto/config/passwords.txt".
+1699243081: mosquitto version 2.0.18 starting
+1699243081: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243081: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243081: Error: /mosquitto/config/passwords.txt is not a file.
+1699243081: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243081: Error opening password file "/mosquitto/config/passwords.txt".
+1699243093: mosquitto version 2.0.18 starting
+1699243093: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243093: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243093: Error: /mosquitto/config/passwords.txt is not a file.
+1699243093: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243093: Error opening password file "/mosquitto/config/passwords.txt".
+1699243094: mosquitto version 2.0.18 starting
+1699243094: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243094: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243094: Error: /mosquitto/config/passwords.txt is not a file.
+1699243094: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243094: Error opening password file "/mosquitto/config/passwords.txt".
+1699243095: mosquitto version 2.0.18 starting
+1699243095: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243095: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243095: Error: /mosquitto/config/passwords.txt is not a file.
+1699243095: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243095: Error opening password file "/mosquitto/config/passwords.txt".
+1699243096: mosquitto version 2.0.18 starting
+1699243096: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243096: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243096: Error: /mosquitto/config/passwords.txt is not a file.
+1699243096: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243096: Error opening password file "/mosquitto/config/passwords.txt".
+1699243097: mosquitto version 2.0.18 starting
+1699243097: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243097: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243097: Error: /mosquitto/config/passwords.txt is not a file.
+1699243097: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243097: Error opening password file "/mosquitto/config/passwords.txt".
+1699243099: mosquitto version 2.0.18 starting
+1699243099: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243099: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243099: Error: /mosquitto/config/passwords.txt is not a file.
+1699243099: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243099: Error opening password file "/mosquitto/config/passwords.txt".
+1699243103: mosquitto version 2.0.18 starting
+1699243103: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243103: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243103: Error: /mosquitto/config/passwords.txt is not a file.
+1699243103: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243103: Error opening password file "/mosquitto/config/passwords.txt".
+1699243110: mosquitto version 2.0.18 starting
+1699243110: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243110: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243110: Error: /mosquitto/config/passwords.txt is not a file.
+1699243110: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243110: Error opening password file "/mosquitto/config/passwords.txt".
+1699243123: mosquitto version 2.0.18 starting
+1699243123: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243123: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243123: Error: /mosquitto/config/passwords.txt is not a file.
+1699243123: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243123: Error opening password file "/mosquitto/config/passwords.txt".
+1699243149: mosquitto version 2.0.18 starting
+1699243149: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243149: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243149: Error: /mosquitto/config/passwords.txt is not a file.
+1699243149: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243149: Error opening password file "/mosquitto/config/passwords.txt".
+1699243201: mosquitto version 2.0.18 starting
+1699243201: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243201: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243201: Error: /mosquitto/config/passwords.txt is not a file.
+1699243201: Error: Unable to open pwfile "/mosquitto/config/passwords.txt".
+1699243201: Error opening password file "/mosquitto/config/passwords.txt".
+1699243261: mosquitto version 2.0.18 starting
+1699243261: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243261: Warning: File /mosquitto/config/password.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password.txt`.
+1699243261: Error: Invalid password hash type for user temperature, removing entry.
+1699243261: Error: Invalid password hash type for user humidity, removing entry.
+1699243261: Opening ipv4 listen socket on port 1883.
+1699243261: mosquitto version 2.0.18 running
+1699243264: New connection from 161.22.62.155:22719 on port 1883.
+1699243264: Client ESP32Client disconnected, not authorised.
+1699243268: mosquitto version 2.0.18 terminating
+1699243268: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699243272: mosquitto version 2.0.18 starting
+1699243272: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243272: Warning: File /mosquitto/config/password.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password.txt`.
+1699243272: Error: Invalid password hash type for user temperature, removing entry.
+1699243272: Error: Invalid password hash type for user humidity, removing entry.
+1699243272: Opening ipv4 listen socket on port 1883.
+1699243272: mosquitto version 2.0.18 running
+1699243274: New connection from 161.22.62.155:22721 on port 1883.
+1699243274: Client ESP32Client disconnected, not authorised.
+1699243276: mosquitto version 2.0.18 terminating
+1699243276: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699243279: mosquitto version 2.0.18 starting
+1699243279: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243279: Warning: File /mosquitto/config/password.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/password.txt`.
+1699243279: Error: Invalid password hash type for user temperature, removing entry.
+1699243279: Error: Invalid password hash type for user humidity, removing entry.
+1699243279: Opening ipv4 listen socket on port 1883.
+1699243279: mosquitto version 2.0.18 running
+1699243280: New connection from 161.22.62.155:22723 on port 1883.
+1699243280: Client ESP32Client disconnected, not authorised.
+1699243285: New connection from 161.22.62.155:22724 on port 1883.
+1699243285: Client ESP32Client disconnected, not authorised.
+1699243289: New connection from 161.22.62.155:22725 on port 1883.
+1699243289: Client auto-F0B98A1F-6C6F-7F35-0B11-BF9B9CDE3D7F disconnected, not authorised.
+1699243290: New connection from 161.22.62.155:22726 on port 1883.
+1699243290: Client ESP32Client disconnected, not authorised.
+1699243292: New connection from 161.22.62.155:22727 on port 1883.
+1699243292: Client auto-8D426E50-26F0-01D4-A2D1-882A4E6CE50C disconnected, not authorised.
+1699243295: New connection from 161.22.62.155:22728 on port 1883.
+1699243295: Client ESP32Client disconnected, not authorised.
+1699243300: New connection from 161.22.62.155:22729 on port 1883.
+1699243300: Client ESP32Client disconnected, not authorised.
+1699243305: New connection from 161.22.62.155:22730 on port 1883.
+1699243305: Client ESP32Client disconnected, not authorised.
+1699243310: New connection from 161.22.62.155:22731 on port 1883.
+1699243310: Client ESP32Client disconnected, not authorised.
+1699243315: New connection from 161.22.62.155:22732 on port 1883.
+1699243315: Client ESP32Client disconnected, not authorised.
+1699243320: New connection from 161.22.62.155:22733 on port 1883.
+1699243320: Client ESP32Client disconnected, not authorised.
+1699243325: New connection from 161.22.62.155:22734 on port 1883.
+1699243325: Client ESP32Client disconnected, not authorised.
+1699243330: New connection from 161.22.62.155:22735 on port 1883.
+1699243330: Client ESP32Client disconnected, not authorised.
+1699243335: New connection from 161.22.62.155:22736 on port 1883.
+1699243335: Client ESP32Client disconnected, not authorised.
+1699243340: New connection from 161.22.62.155:22737 on port 1883.
+1699243340: Client ESP32Client disconnected, not authorised.
+1699243341: New connection from 127.0.0.1:58588 on port 1883.
+1699243341: Client auto-D96C7B91-43F4-610A-1392-26BDB1C63D68 disconnected, not authorised.
+1699243345: New connection from 161.22.62.155:22738 on port 1883.
+1699243345: Client ESP32Client disconnected, not authorised.
+1699243350: New connection from 161.22.62.155:22739 on port 1883.
+1699243350: Client ESP32Client disconnected, not authorised.
+1699243355: New connection from 161.22.62.155:22740 on port 1883.
+1699243355: Client ESP32Client disconnected, not authorised.
+1699243360: New connection from 161.22.62.155:22741 on port 1883.
+1699243360: Client ESP32Client disconnected, not authorised.
+1699243365: New connection from 161.22.62.155:22742 on port 1883.
+1699243365: Client ESP32Client disconnected, not authorised.
+1699243370: New connection from 161.22.62.155:22744 on port 1883.
+1699243370: Client ESP32Client disconnected, not authorised.
+1699243375: New connection from 161.22.62.155:22745 on port 1883.
+1699243375: Client ESP32Client disconnected, not authorised.
+1699243381: New connection from 161.22.62.155:22746 on port 1883.
+1699243381: Client ESP32Client disconnected, not authorised.
+1699243386: New connection from 161.22.62.155:22747 on port 1883.
+1699243386: Client ESP32Client disconnected, not authorised.
+1699243387: New connection from 127.0.0.1:57516 on port 1883.
+1699243387: Client auto-03E4EDE0-BED3-04A8-813A-AE3775252925 disconnected, not authorised.
+1699243391: New connection from 161.22.62.155:22748 on port 1883.
+1699243391: Client ESP32Client disconnected, not authorised.
+1699243396: New connection from 161.22.62.155:22749 on port 1883.
+1699243396: Client ESP32Client disconnected, not authorised.
+1699243401: New connection from 161.22.62.155:22750 on port 1883.
+1699243401: Client ESP32Client disconnected, not authorised.
+1699243406: New connection from 161.22.62.155:22751 on port 1883.
+1699243406: Client ESP32Client disconnected, not authorised.
+1699243411: New connection from 161.22.62.155:22752 on port 1883.
+1699243411: Client ESP32Client disconnected, not authorised.
+1699243416: New connection from 161.22.62.155:22753 on port 1883.
+1699243416: Client ESP32Client disconnected, not authorised.
+1699243421: New connection from 161.22.62.155:22754 on port 1883.
+1699243421: Client ESP32Client disconnected, not authorised.
+1699243426: New connection from 161.22.62.155:22755 on port 1883.
+1699243426: Client ESP32Client disconnected, not authorised.
+1699243431: New connection from 161.22.62.155:22756 on port 1883.
+1699243431: Client ESP32Client disconnected, not authorised.
+1699243436: New connection from 161.22.62.155:22757 on port 1883.
+1699243436: Client ESP32Client disconnected, not authorised.
+1699243441: New connection from 161.22.62.155:22758 on port 1883.
+1699243441: Client ESP32Client disconnected, not authorised.
+1699243446: New connection from 161.22.62.155:22759 on port 1883.
+1699243446: Client ESP32Client disconnected, not authorised.
+1699243451: New connection from 161.22.62.155:22760 on port 1883.
+1699243451: Client ESP32Client disconnected, not authorised.
+1699243457: New connection from 161.22.62.155:22765 on port 1883.
+1699243457: Client ESP32Client disconnected, not authorised.
+1699243462: New connection from 161.22.62.155:22768 on port 1883.
+1699243462: Client ESP32Client disconnected, not authorised.
+1699243467: New connection from 161.22.62.155:22770 on port 1883.
+1699243467: Client ESP32Client disconnected, not authorised.
+1699243472: New connection from 161.22.62.155:22771 on port 1883.
+1699243472: Client ESP32Client disconnected, not authorised.
+1699243477: New connection from 161.22.62.155:22772 on port 1883.
+1699243477: Client ESP32Client disconnected, not authorised.
+1699243482: New connection from 161.22.62.155:22774 on port 1883.
+1699243482: Client ESP32Client disconnected, not authorised.
+1699243487: New connection from 161.22.62.155:22775 on port 1883.
+1699243487: Client ESP32Client disconnected, not authorised.
+1699243492: New connection from 161.22.62.155:22776 on port 1883.
+1699243492: Client ESP32Client disconnected, not authorised.
+1699243497: New connection from 161.22.62.155:22777 on port 1883.
+1699243497: Client ESP32Client disconnected, not authorised.
+1699243502: New connection from 161.22.62.155:22778 on port 1883.
+1699243502: Client ESP32Client disconnected, not authorised.
+1699243507: New connection from 161.22.62.155:22779 on port 1883.
+1699243507: Client ESP32Client disconnected, not authorised.
+1699243512: New connection from 161.22.62.155:22780 on port 1883.
+1699243512: Client ESP32Client disconnected, not authorised.
+1699243517: New connection from 161.22.62.155:22781 on port 1883.
+1699243517: Client ESP32Client disconnected, not authorised.
+1699243522: New connection from 161.22.62.155:22782 on port 1883.
+1699243522: Client ESP32Client disconnected, not authorised.
+1699243527: New connection from 161.22.62.155:22783 on port 1883.
+1699243527: Client ESP32Client disconnected, not authorised.
+1699243532: New connection from 161.22.62.155:22784 on port 1883.
+1699243532: Client ESP32Client disconnected, not authorised.
+1699243537: New connection from 161.22.62.155:22785 on port 1883.
+1699243537: Client ESP32Client disconnected, not authorised.
+1699243542: New connection from 161.22.62.155:22786 on port 1883.
+1699243542: Client ESP32Client disconnected, not authorised.
+1699243547: New connection from 161.22.62.155:22787 on port 1883.
+1699243547: Client ESP32Client disconnected, not authorised.
+1699243553: mosquitto version 2.0.18 terminating
+1699243553: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699243644: mosquitto version 2.0.18 starting
+1699243644: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243644: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243644: Error: Invalid password hash type for user faber, removing entry.
+1699243644: Error: Invalid password hash type for user irla, removing entry.
+1699243644: Error: Invalid password hash type for user guga, removing entry.
+1699243644: Error: Invalid password hash type for user root, removing entry.
+1699243644: Opening ipv4 listen socket on port 1883.
+1699243644: mosquitto version 2.0.18 running
+1699243645: New connection from 161.22.62.155:22815 on port 1883.
+1699243645: Client ESP32Client disconnected, not authorised.
+1699243650: New connection from 161.22.62.155:22816 on port 1883.
+1699243650: Client ESP32Client disconnected, not authorised.
+1699243655: New connection from 161.22.62.155:22817 on port 1883.
+1699243655: Client ESP32Client disconnected, not authorised.
+1699243660: New connection from 161.22.62.155:22818 on port 1883.
+1699243660: Client ESP32Client disconnected, not authorised.
+1699243662: New connection from 161.22.62.155:22819 on port 1883.
+1699243662: Client auto-753F1E58-E7B4-196A-7952-D15BC72E8D3E disconnected, not authorised.
+1699243665: New connection from 161.22.62.155:22820 on port 1883.
+1699243665: Client ESP32Client disconnected, not authorised.
+1699243669: New connection from 161.22.62.155:22821 on port 1883.
+1699243669: Client auto-1288B177-C9E0-32E3-60C8-193F53127C47 disconnected, not authorised.
+1699243671: New connection from 161.22.62.155:22823 on port 1883.
+1699243671: Client ESP32Client disconnected, not authorised.
+1699243676: New connection from 161.22.62.155:22825 on port 1883.
+1699243676: Client ESP32Client disconnected, not authorised.
+1699243681: New connection from 161.22.62.155:22826 on port 1883.
+1699243681: Client ESP32Client disconnected, not authorised.
+1699243686: New connection from 161.22.62.155:22827 on port 1883.
+1699243686: Client ESP32Client disconnected, not authorised.
+1699243691: New connection from 161.22.62.155:22828 on port 1883.
+1699243691: Client ESP32Client disconnected, not authorised.
+1699243696: New connection from 161.22.62.155:22830 on port 1883.
+1699243696: Client ESP32Client disconnected, not authorised.
+1699243701: New connection from 161.22.62.155:22831 on port 1883.
+1699243701: Client ESP32Client disconnected, not authorised.
+1699243706: New connection from 161.22.62.155:22832 on port 1883.
+1699243706: Client ESP32Client disconnected, not authorised.
+1699243711: New connection from 161.22.62.155:22833 on port 1883.
+1699243711: Client ESP32Client disconnected, not authorised.
+1699243716: New connection from 161.22.62.155:22834 on port 1883.
+1699243716: Client ESP32Client disconnected, not authorised.
+1699243721: New connection from 161.22.62.155:22835 on port 1883.
+1699243721: Client ESP32Client disconnected, not authorised.
+1699243726: New connection from 161.22.62.155:22836 on port 1883.
+1699243726: Client ESP32Client disconnected, not authorised.
+1699243731: New connection from 161.22.62.155:22837 on port 1883.
+1699243731: Client ESP32Client disconnected, not authorised.
+1699243736: New connection from 161.22.62.155:22838 on port 1883.
+1699243736: Client ESP32Client disconnected, not authorised.
+1699243737: New connection from 127.0.0.1:58108 on port 1883.
+1699243737: Client auto-8E6A6B77-A28C-36D5-F8BE-42D6E9233696 disconnected, not authorised.
+1699243741: New connection from 161.22.62.155:22840 on port 1883.
+1699243741: Client ESP32Client disconnected, not authorised.
+1699243746: New connection from 161.22.62.155:22841 on port 1883.
+1699243746: Client ESP32Client disconnected, not authorised.
+1699243751: New connection from 161.22.62.155:22842 on port 1883.
+1699243751: Client ESP32Client disconnected, not authorised.
+1699243756: New connection from 161.22.62.155:22843 on port 1883.
+1699243756: Client ESP32Client disconnected, not authorised.
+1699243762: New connection from 161.22.62.155:22844 on port 1883.
+1699243762: Client ESP32Client disconnected, not authorised.
+1699243767: New connection from 161.22.62.155:22845 on port 1883.
+1699243767: Client ESP32Client disconnected, not authorised.
+1699243772: New connection from 161.22.62.155:22846 on port 1883.
+1699243772: Client ESP32Client disconnected, not authorised.
+1699243777: New connection from 161.22.62.155:22847 on port 1883.
+1699243777: Client ESP32Client disconnected, not authorised.
+1699243782: New connection from 161.22.62.155:22853 on port 1883.
+1699243782: Client ESP32Client disconnected, not authorised.
+1699243787: New connection from 161.22.62.155:22854 on port 1883.
+1699243787: Client ESP32Client disconnected, not authorised.
+1699243792: New connection from 161.22.62.155:22855 on port 1883.
+1699243792: Client ESP32Client disconnected, not authorised.
+1699243797: New connection from 161.22.62.155:22856 on port 1883.
+1699243797: Client ESP32Client disconnected, not authorised.
+1699243802: New connection from 161.22.62.155:22857 on port 1883.
+1699243802: Client ESP32Client disconnected, not authorised.
+1699243807: New connection from 161.22.62.155:22858 on port 1883.
+1699243807: Client ESP32Client disconnected, not authorised.
+1699243812: New connection from 161.22.62.155:22859 on port 1883.
+1699243812: Client ESP32Client disconnected, not authorised.
+1699243817: New connection from 161.22.62.155:22860 on port 1883.
+1699243817: Client ESP32Client disconnected, not authorised.
+1699243817: mosquitto version 2.0.18 terminating
+1699243817: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699243824: mosquitto version 2.0.18 starting
+1699243824: Config loaded from /mosquitto/config/mosquitto.conf.
+1699243824: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699243824: Error: Invalid password hash type for user faber, removing entry.
+1699243824: Error: Invalid password hash type for user irla, removing entry.
+1699243824: Error: Invalid password hash type for user guga, removing entry.
+1699243824: Opening ipv4 listen socket on port 1883.
+1699243824: mosquitto version 2.0.18 running
+1699243827: New connection from 161.22.62.155:22864 on port 1883.
+1699243827: Client ESP32Client disconnected, not authorised.
+1699243833: New connection from 161.22.62.155:22865 on port 1883.
+1699243833: Client ESP32Client disconnected, not authorised.
+1699243838: New connection from 161.22.62.155:22866 on port 1883.
+1699243838: Client ESP32Client disconnected, not authorised.
+1699243843: New connection from 161.22.62.155:22867 on port 1883.
+1699243843: Client ESP32Client disconnected, not authorised.
+1699243848: New connection from 161.22.62.155:22868 on port 1883.
+1699243848: Client ESP32Client disconnected, not authorised.
+1699243848: New connection from 127.0.0.1:60594 on port 1883.
+1699243848: Client auto-6992411D-100E-9A10-F2DF-A3E7DE8CB5EA disconnected, not authorised.
+1699243853: New connection from 161.22.62.155:22870 on port 1883.
+1699243853: Client ESP32Client disconnected, not authorised.
+1699243858: New connection from 161.22.62.155:22874 on port 1883.
+1699243858: Client ESP32Client disconnected, not authorised.
+1699243863: New connection from 161.22.62.155:22875 on port 1883.
+1699243863: Client ESP32Client disconnected, not authorised.
+1699243868: New connection from 161.22.62.155:22876 on port 1883.
+1699243868: Client ESP32Client disconnected, not authorised.
+1699243873: New connection from 161.22.62.155:22877 on port 1883.
+1699243873: Client ESP32Client disconnected, not authorised.
+1699243878: New connection from 161.22.62.155:22880 on port 1883.
+1699243878: Client ESP32Client disconnected, not authorised.
+1699243883: New connection from 161.22.62.155:22881 on port 1883.
+1699243883: Client ESP32Client disconnected, not authorised.
+1699243888: New connection from 161.22.62.155:22882 on port 1883.
+1699243888: Client ESP32Client disconnected, not authorised.
+1699243893: New connection from 161.22.62.155:22883 on port 1883.
+1699243893: Client ESP32Client disconnected, not authorised.
+1699243898: New connection from 161.22.62.155:22884 on port 1883.
+1699243898: Client ESP32Client disconnected, not authorised.
+1699243903: New connection from 161.22.62.155:22885 on port 1883.
+1699243903: Client ESP32Client disconnected, not authorised.
+1699243908: New connection from 161.22.62.155:22886 on port 1883.
+1699243908: Client ESP32Client disconnected, not authorised.
+1699243913: New connection from 161.22.62.155:22887 on port 1883.
+1699243913: Client ESP32Client disconnected, not authorised.
+1699243918: New connection from 161.22.62.155:22888 on port 1883.
+1699243918: Client ESP32Client disconnected, not authorised.
+1699243923: New connection from 161.22.62.155:22889 on port 1883.
+1699243923: Client ESP32Client disconnected, not authorised.
+1699243928: New connection from 161.22.62.155:22890 on port 1883.
+1699243928: Client ESP32Client disconnected, not authorised.
+1699243934: New connection from 161.22.62.155:22891 on port 1883.
+1699243934: Client ESP32Client disconnected, not authorised.
+1699243939: New connection from 161.22.62.155:22892 on port 1883.
+1699243939: Client ESP32Client disconnected, not authorised.
+1699243944: New connection from 161.22.62.155:22896 on port 1883.
+1699243944: Client ESP32Client disconnected, not authorised.
+1699243949: New connection from 161.22.62.155:22897 on port 1883.
+1699243949: Client ESP32Client disconnected, not authorised.
+1699243954: New connection from 161.22.62.155:22898 on port 1883.
+1699243954: Client ESP32Client disconnected, not authorised.
+1699243959: New connection from 161.22.62.155:22899 on port 1883.
+1699243959: Client ESP32Client disconnected, not authorised.
+1699243964: New connection from 161.22.62.155:22900 on port 1883.
+1699243964: Client ESP32Client disconnected, not authorised.
+1699243969: New connection from 161.22.62.155:22901 on port 1883.
+1699243969: Client ESP32Client disconnected, not authorised.
+1699243974: New connection from 161.22.62.155:22903 on port 1883.
+1699243974: Client ESP32Client disconnected, not authorised.
+1699243979: New connection from 161.22.62.155:22904 on port 1883.
+1699243979: Client ESP32Client disconnected, not authorised.
+1699243984: New connection from 161.22.62.155:22905 on port 1883.
+1699243984: Client ESP32Client disconnected, not authorised.
+1699243989: New connection from 161.22.62.155:22906 on port 1883.
+1699243989: Client ESP32Client disconnected, not authorised.
+1699243994: New connection from 161.22.62.155:22907 on port 1883.
+1699243994: Client ESP32Client disconnected, not authorised.
+1699243999: New connection from 161.22.62.155:22909 on port 1883.
+1699243999: Client ESP32Client disconnected, not authorised.
+1699244004: New connection from 161.22.62.155:22917 on port 1883.
+1699244004: Client ESP32Client disconnected, not authorised.
+1699244009: New connection from 161.22.62.155:22924 on port 1883.
+1699244009: Client ESP32Client disconnected, not authorised.
+1699244014: New connection from 161.22.62.155:22928 on port 1883.
+1699244014: Client ESP32Client disconnected, not authorised.
+1699244019: New connection from 161.22.62.155:22929 on port 1883.
+1699244019: Client ESP32Client disconnected, not authorised.
+1699244024: New connection from 161.22.62.155:22930 on port 1883.
+1699244025: Client ESP32Client disconnected, not authorised.
+1699244030: New connection from 161.22.62.155:22931 on port 1883.
+1699244030: Client ESP32Client disconnected, not authorised.
+1699244030: mosquitto version 2.0.18 terminating
+1699244030: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699244035: mosquitto version 2.0.18 starting
+1699244035: Config loaded from /mosquitto/config/mosquitto.conf.
+1699244035: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699244035: Error: Invalid password hash type for user faber, removing entry.
+1699244035: Error: Invalid password hash type for user irla, removing entry.
+1699244035: Error: Invalid password hash type for user guga, removing entry.
+1699244035: Opening ipv4 listen socket on port 1883.
+1699244035: mosquitto version 2.0.18 running
+1699244038: mosquitto version 2.0.18 terminating
+1699244038: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699244041: mosquitto version 2.0.18 starting
+1699244041: Config loaded from /mosquitto/config/mosquitto.conf.
+1699244041: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1699244041: Error: Invalid password hash type for user faber, removing entry.
+1699244041: Error: Invalid password hash type for user irla, removing entry.
+1699244041: Error: Invalid password hash type for user guga, removing entry.
+1699244041: Opening ipv4 listen socket on port 1883.
+1699244041: mosquitto version 2.0.18 running
+1699244045: New connection from 161.22.62.155:22934 on port 1883.
+1699244045: Client ESP32Client disconnected, not authorised.
+1699244050: New connection from 161.22.62.155:22935 on port 1883.
+1699244050: Client ESP32Client disconnected, not authorised.
+1699244055: New connection from 161.22.62.155:22936 on port 1883.
+1699244055: Client ESP32Client disconnected, not authorised.
+1699244060: New connection from 161.22.62.155:22937 on port 1883.
+1699244060: Client ESP32Client disconnected, not authorised.
+1699244065: New connection from 161.22.62.155:22938 on port 1883.
+1699244065: Client ESP32Client disconnected, not authorised.
+1699244070: New connection from 161.22.62.155:22939 on port 1883.
+1699244070: Client ESP32Client disconnected, not authorised.
+1699244072: New connection from 127.0.0.1:45440 on port 1883.
+1699244072: Client auto-6901227B-C505-C775-99F5-484614E3133C disconnected, not authorised.
+1699244075: New connection from 161.22.62.155:22940 on port 1883.
+1699244075: Client ESP32Client disconnected, not authorised.
+1699244075: New connection from 127.0.0.1:49642 on port 1883.
+1699244075: Client auto-C0D3FF2C-0BC1-076C-AFDE-B15CA17979D5 disconnected, not authorised.
+1699244079: New connection from 161.22.62.155:22941 on port 1883.
+1699244079: Client auto-EFF311B8-A8CF-BE09-FCB6-EC884789CF10 disconnected, not authorised.
+1699244080: New connection from 161.22.62.155:22942 on port 1883.
+1699244080: Client ESP32Client disconnected, not authorised.
+1699244085: New connection from 161.22.62.155:22943 on port 1883.
+1699244085: Client ESP32Client disconnected, not authorised.
+1699244090: New connection from 161.22.62.155:22944 on port 1883.
+1699244090: Client ESP32Client disconnected, not authorised.
+1699244091: New connection from 161.22.62.155:22945 on port 1883.
+1699244091: Client auto-E6198F17-32E8-8F13-0C26-9AB660814D0E disconnected, not authorised.
+1699244095: New connection from 161.22.62.155:22946 on port 1883.
+1699244095: Client ESP32Client disconnected, not authorised.
+1699244100: New connection from 161.22.62.155:22947 on port 1883.
+1699244100: Client ESP32Client disconnected, not authorised.
+1699244101: New connection from 161.22.62.155:22948 on port 1883.
+1699244101: Client auto-407AFAF3-3973-9B6A-540A-236545D01616 disconnected, not authorised.
+1699244106: New connection from 161.22.62.155:22949 on port 1883.
+1699244106: Client ESP32Client disconnected, not authorised.
+1699244111: New connection from 161.22.62.155:22950 on port 1883.
+1699244111: Client ESP32Client disconnected, not authorised.
+1699244116: New connection from 161.22.62.155:22951 on port 1883.
+1699244116: Client ESP32Client disconnected, not authorised.
+1699244121: New connection from 161.22.62.155:22952 on port 1883.
+1699244121: Client ESP32Client disconnected, not authorised.
+1699244126: New connection from 161.22.62.155:22955 on port 1883.
+1699244126: Client ESP32Client disconnected, not authorised.
+1699244131: New connection from 161.22.62.155:22956 on port 1883.
+1699244131: Client ESP32Client disconnected, not authorised.
+1699244136: New connection from 161.22.62.155:22957 on port 1883.
+1699244136: Client ESP32Client disconnected, not authorised.
+1699244141: New connection from 161.22.62.155:22958 on port 1883.
+1699244141: Client ESP32Client disconnected, not authorised.
+1699244146: New connection from 161.22.62.155:22960 on port 1883.
+1699244146: Client ESP32Client disconnected, not authorised.
+1699244151: New connection from 161.22.62.155:22961 on port 1883.
+1699244151: Client ESP32Client disconnected, not authorised.
+1699244156: New connection from 161.22.62.155:22968 on port 1883.
+1699244156: Client ESP32Client disconnected, not authorised.
+1699244161: New connection from 161.22.62.155:22970 on port 1883.
+1699244161: Client ESP32Client disconnected, not authorised.
+1699244163: New connection from 161.22.62.155:22971 on port 1883.
+1699244163: Client auto-36C79CCE-EC56-62BF-5202-EA0EFE1515DE disconnected, not authorised.
+1699244166: New connection from 161.22.62.155:22972 on port 1883.
+1699244166: Client ESP32Client disconnected, not authorised.
+1699244171: New connection from 161.22.62.155:22973 on port 1883.
+1699244171: Client ESP32Client disconnected, not authorised.
+1699244176: New connection from 161.22.62.155:22975 on port 1883.
+1699244176: Client ESP32Client disconnected, not authorised.
+1699244181: New connection from 161.22.62.155:22976 on port 1883.
+1699244181: Client ESP32Client disconnected, not authorised.
+1699244186: New connection from 161.22.62.155:22977 on port 1883.
+1699244186: Client ESP32Client disconnected, not authorised.
+1699244191: New connection from 161.22.62.155:22978 on port 1883.
+1699244191: Client ESP32Client disconnected, not authorised.
+1699244196: New connection from 161.22.62.155:22979 on port 1883.
+1699244196: Client ESP32Client disconnected, not authorised.
+1699244202: New connection from 161.22.62.155:22980 on port 1883.
+1699244202: Client ESP32Client disconnected, not authorised.
+1699244207: New connection from 161.22.62.155:22981 on port 1883.
+1699244207: Client ESP32Client disconnected, not authorised.
+1699244212: New connection from 161.22.62.155:22982 on port 1883.
+1699244212: Client ESP32Client disconnected, not authorised.
+1699244217: New connection from 161.22.62.155:22983 on port 1883.
+1699244217: Client ESP32Client disconnected, not authorised.
+1699244222: New connection from 161.22.62.155:22984 on port 1883.
+1699244222: Client ESP32Client disconnected, not authorised.
+1699244227: New connection from 161.22.62.155:22985 on port 1883.
+1699244227: Client ESP32Client disconnected, not authorised.
+1699244232: New connection from 161.22.62.155:22986 on port 1883.
+1699244232: Client ESP32Client disconnected, not authorised.
+1699244237: New connection from 161.22.62.155:22987 on port 1883.
+1699244237: Client ESP32Client disconnected, not authorised.
+1699244242: New connection from 161.22.62.155:22988 on port 1883.
+1699244242: Client ESP32Client disconnected, not authorised.
+1699244247: New connection from 161.22.62.155:22989 on port 1883.
+1699244247: Client ESP32Client disconnected, not authorised.
+1699244252: New connection from 161.22.62.155:22990 on port 1883.
+1699244252: Client ESP32Client disconnected, not authorised.
+1699244257: New connection from 161.22.62.155:22991 on port 1883.
+1699244257: Client ESP32Client disconnected, not authorised.
+1699244261: New connection from 161.22.62.155:22992 on port 1883.
+1699244261: Client auto-9D45691F-E89C-F698-2489-F2816CC73987 disconnected, not authorised.
+1699244262: New connection from 161.22.62.155:22993 on port 1883.
+1699244262: Client ESP32Client disconnected, not authorised.
+1699244267: New connection from 161.22.62.155:22994 on port 1883.
+1699244267: Client ESP32Client disconnected, not authorised.
+1699244272: New connection from 161.22.62.155:22996 on port 1883.
+1699244272: Client ESP32Client disconnected, not authorised.
+1699244277: New connection from 161.22.62.155:22997 on port 1883.
+1699244277: Client ESP32Client disconnected, not authorised.
+1699244282: New connection from 161.22.62.155:22998 on port 1883.
+1699244282: Client ESP32Client disconnected, not authorised.
+1699244288: New connection from 161.22.62.155:22999 on port 1883.
+1699244288: Client ESP32Client disconnected, not authorised.
+1699244293: New connection from 161.22.62.155:23000 on port 1883.
+1699244293: Client ESP32Client disconnected, not authorised.
+1699244298: New connection from 161.22.62.155:23001 on port 1883.
+1699244298: Client ESP32Client disconnected, not authorised.
+1699244303: New connection from 161.22.62.155:23002 on port 1883.
+1699244303: Client ESP32Client disconnected, not authorised.
+1699244308: New connection from 161.22.62.155:23003 on port 1883.
+1699244308: Client ESP32Client disconnected, not authorised.
+1699244313: New connection from 161.22.62.155:23004 on port 1883.
+1699244313: Client ESP32Client disconnected, not authorised.
+1699244318: New connection from 161.22.62.155:23006 on port 1883.
+1699244318: Client ESP32Client disconnected, not authorised.
+1699244323: New connection from 161.22.62.155:23007 on port 1883.
+1699244323: Client ESP32Client disconnected, not authorised.
+1699244328: New connection from 161.22.62.155:23008 on port 1883.
+1699244328: Client ESP32Client disconnected, not authorised.
+1699244333: New connection from 161.22.62.155:23009 on port 1883.
+1699244333: Client ESP32Client disconnected, not authorised.
+1699244338: New connection from 161.22.62.155:23010 on port 1883.
+1699244338: Client ESP32Client disconnected, not authorised.
+1699244343: New connection from 161.22.62.155:23011 on port 1883.
+1699244343: Client ESP32Client disconnected, not authorised.
+1699244348: New connection from 161.22.62.155:23012 on port 1883.
+1699244348: Client ESP32Client disconnected, not authorised.
+1699244353: New connection from 161.22.62.155:23013 on port 1883.
+1699244353: Client ESP32Client disconnected, not authorised.
+1699244358: New connection from 161.22.62.155:23014 on port 1883.
+1699244358: Client ESP32Client disconnected, not authorised.
+1699244363: New connection from 161.22.62.155:23015 on port 1883.
+1699244363: Client ESP32Client disconnected, not authorised.
+1699244368: New connection from 161.22.62.155:23016 on port 1883.
+1699244368: Client ESP32Client disconnected, not authorised.
+1699244373: New connection from 161.22.62.155:23017 on port 1883.
+1699244373: Client ESP32Client disconnected, not authorised.
+1699244379: New connection from 161.22.62.155:23018 on port 1883.
+1699244379: Client ESP32Client disconnected, not authorised.
+1699244384: New connection from 161.22.62.155:23021 on port 1883.
+1699244384: Client ESP32Client disconnected, not authorised.
+1699244389: New connection from 161.22.62.155:23022 on port 1883.
+1699244389: Client ESP32Client disconnected, not authorised.
+1699244394: New connection from 161.22.62.155:23023 on port 1883.
+1699244394: Client ESP32Client disconnected, not authorised.
+1699244399: New connection from 161.22.62.155:23024 on port 1883.
+1699244399: Client ESP32Client disconnected, not authorised.
+1699244404: New connection from 161.22.62.155:23025 on port 1883.
+1699244404: Client ESP32Client disconnected, not authorised.
+1699244409: New connection from 161.22.62.155:23026 on port 1883.
+1699244409: Client ESP32Client disconnected, not authorised.
+1699244414: New connection from 161.22.62.155:23027 on port 1883.
+1699244414: Client ESP32Client disconnected, not authorised.
+1699244419: New connection from 161.22.62.155:23028 on port 1883.
+1699244419: Client ESP32Client disconnected, not authorised.
+1699244424: New connection from 161.22.62.155:23029 on port 1883.
+1699244424: Client ESP32Client disconnected, not authorised.
+1699244429: New connection from 161.22.62.155:23030 on port 1883.
+1699244429: Client ESP32Client disconnected, not authorised.
+1699244434: New connection from 161.22.62.155:23031 on port 1883.
+1699244434: Client ESP32Client disconnected, not authorised.
+1699244439: New connection from 161.22.62.155:23032 on port 1883.
+1699244439: Client ESP32Client disconnected, not authorised.
+1699244441: mosquitto version 2.0.18 terminating
+1699244441: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699244442: mosquitto version 2.0.18 starting
+1699244442: Config loaded from /mosquitto/config/mosquitto.conf.
+1699244442: Error: Invalid password hash type for user irla, removing entry.
+1699244442: Opening ipv4 listen socket on port 1883.
+1699244442: mosquitto version 2.0.18 running
+1699244444: New connection from 161.22.62.155:23033 on port 1883.
+1699244444: Client ESP32Client disconnected, not authorised.
+1699244449: New connection from 161.22.62.155:23034 on port 1883.
+1699244449: Client ESP32Client disconnected, not authorised.
+1699244450: New connection from 161.22.62.155:23035 on port 1883.
+1699244450: New client connected from 161.22.62.155:23035 as auto-5F8063C2-A2D0-2A42-EAB2-1C1031CC96E3 (p2, c1, k60, u'faber').
+1699244454: New connection from 161.22.62.155:23037 on port 1883.
+1699244454: Client ESP32Client disconnected, not authorised.
+1699244459: New connection from 161.22.62.155:23045 on port 1883.
+1699244459: Client ESP32Client disconnected, not authorised.
+1699244464: New connection from 161.22.62.155:23046 on port 1883.
+1699244464: Client ESP32Client disconnected, not authorised.
+1699244470: New connection from 161.22.62.155:23047 on port 1883.
+1699244470: Client ESP32Client disconnected, not authorised.
+1699244475: New connection from 161.22.62.155:23048 on port 1883.
+1699244475: Client ESP32Client disconnected, not authorised.
+1699244480: New connection from 161.22.62.155:23050 on port 1883.
+1699244480: Client ESP32Client disconnected, not authorised.
+1699244485: New connection from 161.22.62.155:23052 on port 1883.
+1699244485: Client ESP32Client disconnected, not authorised.
+1699244490: New connection from 161.22.62.155:23053 on port 1883.
+1699244490: Client ESP32Client disconnected, not authorised.
+1699244495: New connection from 161.22.62.155:23054 on port 1883.
+1699244495: Client ESP32Client disconnected, not authorised.
+1699244500: New connection from 161.22.62.155:23055 on port 1883.
+1699244500: Client ESP32Client disconnected, not authorised.
+1699244505: New connection from 161.22.62.155:23056 on port 1883.
+1699244505: Client ESP32Client disconnected, not authorised.
+1699244510: New connection from 161.22.62.155:23059 on port 1883.
+1699244510: Client ESP32Client disconnected, not authorised.
+1699244515: New connection from 161.22.62.155:23060 on port 1883.
+1699244515: Client ESP32Client disconnected, not authorised.
+1699244520: New connection from 161.22.62.155:23062 on port 1883.
+1699244520: Client ESP32Client disconnected, not authorised.
+1699244525: New connection from 161.22.62.155:23065 on port 1883.
+1699244525: Client ESP32Client disconnected, not authorised.
+1699244530: New connection from 161.22.62.155:23066 on port 1883.
+1699244530: Client ESP32Client disconnected, not authorised.
+1699244535: New connection from 161.22.62.155:23067 on port 1883.
+1699244535: Client ESP32Client disconnected, not authorised.
+1699244540: New connection from 161.22.62.155:23068 on port 1883.
+1699244540: Client ESP32Client disconnected, not authorised.
+1699244545: New connection from 161.22.62.155:23069 on port 1883.
+1699244545: Client ESP32Client disconnected, not authorised.
+1699244550: New connection from 161.22.62.155:23070 on port 1883.
+1699244550: Client ESP32Client disconnected, not authorised.
+1699244555: New connection from 161.22.62.155:23071 on port 1883.
+1699244555: Client ESP32Client disconnected, not authorised.
+1699244561: New connection from 161.22.62.155:23072 on port 1883.
+1699244561: Client ESP32Client disconnected, not authorised.
+1699244566: New connection from 161.22.62.155:23073 on port 1883.
+1699244566: Client ESP32Client disconnected, not authorised.
+1699244571: New connection from 161.22.62.155:23075 on port 1883.
+1699244571: Client ESP32Client disconnected, not authorised.
+1699244576: New connection from 161.22.62.155:23076 on port 1883.
+1699244576: Client ESP32Client disconnected, not authorised.
+1699244581: New connection from 161.22.62.155:23077 on port 1883.
+1699244581: Client ESP32Client disconnected, not authorised.
+1699244586: New connection from 161.22.62.155:23078 on port 1883.
+1699244586: Client ESP32Client disconnected, not authorised.
+1699244591: New connection from 161.22.62.155:23079 on port 1883.
+1699244591: Client ESP32Client disconnected, not authorised.
+1699244594: mosquitto version 2.0.18 terminating
+1699244594: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699244595: mosquitto version 2.0.18 starting
+1699244595: Config loaded from /mosquitto/config/mosquitto.conf.
+1699244595: Opening ipv4 listen socket on port 1883.
+1699244595: mosquitto version 2.0.18 running
+1699244595: New connection from 161.22.62.155:23080 on port 1883.
+1699244595: New client connected from 161.22.62.155:23080 as auto-A08C46DD-43DF-2134-B095-99D570770128 (p2, c1, k60, u'faber').
+1699244596: New connection from 161.22.62.155:23081 on port 1883.
+1699244596: Client ESP32Client disconnected, not authorised.
+1699244597: Client auto-A08C46DD-43DF-2134-B095-99D570770128 disconnected.
+1699244599: New connection from 161.22.62.155:23082 on port 1883.
+1699244599: New client connected from 161.22.62.155:23082 as auto-1B7EDBD5-C16A-0982-5863-87BD18588430 (p2, c1, k60, u'faber').
+1699244601: New connection from 161.22.62.155:23083 on port 1883.
+1699244601: Client ESP32Client disconnected, not authorised.
+1699244606: New connection from 161.22.62.155:23084 on port 1883.
+1699244606: Client ESP32Client disconnected, not authorised.
+1699244611: New connection from 161.22.62.155:23085 on port 1883.
+1699244611: Client ESP32Client disconnected, not authorised.
+1699244616: New connection from 161.22.62.155:23087 on port 1883.
+1699244616: Client ESP32Client disconnected, not authorised.
+1699244621: New connection from 161.22.62.155:23088 on port 1883.
+1699244621: Client ESP32Client disconnected, not authorised.
+1699244626: New connection from 161.22.62.155:23089 on port 1883.
+1699244626: Client ESP32Client disconnected, not authorised.
+1699244631: New connection from 161.22.62.155:23090 on port 1883.
+1699244631: Client ESP32Client disconnected, not authorised.
+1699244636: New connection from 161.22.62.155:23091 on port 1883.
+1699244636: Client ESP32Client disconnected, not authorised.
+1699244641: New connection from 161.22.62.155:23092 on port 1883.
+1699244641: Client ESP32Client disconnected, not authorised.
+1699244646: New connection from 161.22.62.155:23093 on port 1883.
+1699244646: Client ESP32Client disconnected, not authorised.
+1699244651: New connection from 161.22.62.155:23095 on port 1883.
+1699244651: Client ESP32Client disconnected, not authorised.
+1699244656: New connection from 161.22.62.155:23096 on port 1883.
+1699244656: Client ESP32Client disconnected, not authorised.
+1699244662: New connection from 161.22.62.155:23097 on port 1883.
+1699244662: Client ESP32Client disconnected, not authorised.
+1699244667: New connection from 161.22.62.155:23100 on port 1883.
+1699244667: Client ESP32Client disconnected, not authorised.
+1699244672: New connection from 161.22.62.155:23101 on port 1883.
+1699244672: Client ESP32Client disconnected, not authorised.
+1699244677: New connection from 161.22.62.155:22144 on port 1883.
+1699244677: Client ESP32Client disconnected, not authorised.
+1699244682: New connection from 161.22.62.155:22147 on port 1883.
+1699244682: Client ESP32Client disconnected, not authorised.
+1699244690: New connection from 161.22.62.155:22148 on port 1883.
+1699244690: Client ESP32Client disconnected, not authorised.
+1699244695: New connection from 161.22.62.155:22149 on port 1883.
+1699244695: Client ESP32Client disconnected, not authorised.
+1699244700: New connection from 161.22.62.155:22152 on port 1883.
+1699244700: Client ESP32Client disconnected, not authorised.
+1699244705: New connection from 161.22.62.155:22157 on port 1883.
+1699244705: Client ESP32Client disconnected, not authorised.
+1699244710: New connection from 161.22.62.155:22159 on port 1883.
+1699244710: Client ESP32Client disconnected, not authorised.
+1699244734: New connection from 161.22.62.155:22161 on port 1883.
+1699244734: New client connected from 161.22.62.155:22161 as ESP32Client (p2, c1, k15, u'esp').
+1699244754: New connection from 161.22.62.155:22163 on port 1883.
+1699244754: Client ESP32Client already connected, closing old connection.
+1699244754: New client connected from 161.22.62.155:22163 as ESP32Client (p2, c1, k15, u'esp').
+1699244777: Client auto-1B7EDBD5-C16A-0982-5863-87BD18588430 disconnected.
+1699244784: New connection from 161.22.62.155:22168 on port 1883.
+1699244784: New client connected from 161.22.62.155:22168 as auto-DE6B5603-D10D-04BE-5FB2-9AC3BCD94913 (p2, c1, k60, u'faber').
+1699244788: Client auto-DE6B5603-D10D-04BE-5FB2-9AC3BCD94913 disconnected.
+1699244812: New connection from 161.22.62.155:22172 on port 1883.
+1699244812: Client auto-88785FD6-51D8-5495-F800-87754F6D3A30 disconnected, not authorised.
+1699244816: mosquitto version 2.0.18 terminating
+1699244816: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699244817: mosquitto version 2.0.18 starting
+1699244817: Config loaded from /mosquitto/config/mosquitto.conf.
+1699244817: Opening ipv4 listen socket on port 1883.
+1699244817: mosquitto version 2.0.18 running
+1699244821: New connection from 161.22.62.155:22173 on port 1883.
+1699244821: New client connected from 161.22.62.155:22173 as auto-BE433206-E62A-3FBC-38CE-13CECCA2E613 (p2, c1, k60, u'julio').
+1699244828: New connection from 161.22.62.155:22174 on port 1883.
+1699244828: New client connected from 161.22.62.155:22174 as ESP32Client (p2, c1, k15, u'esp').
+1699244833: Client auto-BE433206-E62A-3FBC-38CE-13CECCA2E613 disconnected.
+1699244882: Client ESP32Client has exceeded timeout, disconnecting.
+=======
 1699241737: Saving in-memory database to /mosquitto/data//mosquitto.db.
+<<<<<<< HEAD
 1699243538: Saving in-memory database to /mosquitto/data//mosquitto.db.
 1699245339: Saving in-memory database to /mosquitto/data//mosquitto.db.
+=======
+>>>>>>> dbc26470c5e0d20f34953cadb025bd328c0d4e0c
+>>>>>>> f2e01c3fef0c980b58548bf9f6ae8bc9c2909136
