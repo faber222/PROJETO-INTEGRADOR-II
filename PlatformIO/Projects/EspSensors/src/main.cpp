@@ -24,6 +24,8 @@ float Humidity;
 const char* ssid = "FABER";
 const char* password = "faber180975";
 const char* mqtt_server = "ec2-18-231-159-19.sa-east-1.compute.amazonaws.com";
+const char* mqtt_user = "esp";
+const char* mqtt_password = "espsensors";
 const char* topic = "test";
 const char* tempTopic = "temperature";
 const char* humidityTopic = "humidity";
@@ -46,7 +48,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Conectando ao MQTT Broker...");
-    if (client.connect("ESP32Client")) {
+    if (client.connect("ESP32Client", mqtt_user, mqtt_password)) {
       Serial.println("Conectado");
       client.subscribe("test");
     } else {
