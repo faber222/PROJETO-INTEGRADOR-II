@@ -9,7 +9,7 @@
 #include <SPI.h>
 #include <PubSubClient.h>
 #include <string>
-#include <iostream>
+#include <math.h>
 
 #define DHTTYPE DHT22     // DHT 22  (AM2302), AM2321
 
@@ -23,7 +23,7 @@ float Humidity;
 
 const char* ssid = "FABER";
 const char* password = "faber180975";
-const char* mqtt_server = "15.228.247.200";
+const char* mqtt_server = "ec2-18-231-159-19.sa-east-1.compute.amazonaws.com";
 const char* topic = "test";
 const char* tempTopic = "temperature";
 const char* humidityTopic = "humidity";
@@ -147,15 +147,15 @@ void loop() {
     dtostrf(Humidity, 1, 2, humString);
 
     String payload = String("Temperature: ") + String(tempString) + "°C, Humidity: " + String(humString) + "%";
-    String payloadTemp = String("Temperature: ") + String(tempString) + "ºC";
-    String payloadHumidity = "Humidity: " + String(humString) + "%";
+    String payloadTemp = String(tempString);
+    String payloadHumidity = String(humString);
     
     client.publish(topic, ( char* ) payload.c_str());
     client.publish(tempTopic, ( char* ) payloadTemp.c_str());
     client.publish(humidityTopic, ( char* ) payloadHumidity.c_str());
 
     client.loop();
-    delay(1000);
+    delay(pow(10, 4));
   
 }
 
