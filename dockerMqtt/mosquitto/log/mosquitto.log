@@ -165,6 +165,7 @@
 1699236334: Saving in-memory database to /mosquitto/data//mosquitto.db.
 1699238135: Saving in-memory database to /mosquitto/data//mosquitto.db.
 1699239936: Saving in-memory database to /mosquitto/data//mosquitto.db.
+<<<<<<< HEAD
 1699242521: mosquitto version 2.0.18 starting
 1699242521: Config loaded from /mosquitto/config/mosquitto.conf.
 1699242521: Opening ipv4 listen socket on port 1883.
@@ -1057,3 +1058,6 @@ To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
 1699244828: New client connected from 161.22.62.155:22174 as ESP32Client (p2, c1, k15, u'esp').
 1699244833: Client auto-BE433206-E62A-3FBC-38CE-13CECCA2E613 disconnected.
 1699244882: Client ESP32Client has exceeded timeout, disconnecting.
+=======
+1699241737: Saving in-memory database to /mosquitto/data//mosquitto.db.
+>>>>>>> dbc26470c5e0d20f34953cadb025bd328c0d4e0c
