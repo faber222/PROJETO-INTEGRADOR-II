@@ -34,3 +34,26 @@ xargs -a requirements-system.txt sudo apt-get install
 ```shell
 pip install -r requirements.txt
 ```
+
+### Configurando DB
+precisa ter o servidor mysql instalado na tua maquina local e colocar as credenciais de autenticação em project/settings.py
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Pji1234',
+        'USER': 'root',
+        'PASSWORD': 'Brc1234@',
+        'PORT': 3306,
+        'HOST': '127.0.0.1'
+    }
+}
+```
+deve substituir NAME pelo nome da tua conexão, o USER geralmente o padrão é root, o password que tu colocar pro teu mysqlserver quando tu instala ele, e o host local que vai ser 127.0.0.1 (pra desenvolvimento). Tem bastante informação no google pra configurar o mysqlserver no teu pc caso nunca tenha feito, chatgpt também pode fazer passo-a-passo ensinando.
+
+
+### Executando a aplicação web
+Precisa estar no diretório aplicacao_web e executar o seguinte comando:
+```python
+python3 manage.py runserver
+```

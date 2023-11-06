@@ -12,10 +12,10 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 public class MQTTSubscriber {
-    private static final String broker = "tcp://192.168.1.6:1883";
-    private static final String topic = "teste";
+    private static final String broker = "tcp://18.231.159.19:1883";
+    private static final String topic = "temperature";
     private static final String dbUrl = "jdbc:mysql://localhost:3306/teste_local";
-    private static final String dbUser = "faber222";
+    private static final String dbUser = "root";
     private static final String dbPassword = "faber180975";
 
     public void executar() {
@@ -23,17 +23,20 @@ public class MQTTSubscriber {
             try (MqttClient client = new MqttClient(broker, MqttClient.generateClientId())) {
                 client.setCallback(new MqttCallback() {
                     @Override
-                    public void connectionLost(Throwable cause) {}
-
-                    @Override
-                    public void messageArrived(String topic, MqttMessage message) {
-                        String content = new String(message.getPayload());
-                        System.out.println("Mensagem recebida: " + content);
-                        saveToDatabase(content);
+                    public void connectionLost(Throwable cause) {
                     }
 
                     @Override
-                    public void deliveryComplete(IMqttDeliveryToken token) {}
+                    public void messageArrived(String topic, MqttMessage message) throws ClassNotFoundException {
+                        String content = new String(message.getPayload());
+                        System.out.println("Mensagem recebida: " + content);
+                        System.out.println("1");
+                        saveToDatabase(content);
+                    }
+                    
+                    @Override
+                    public void deliveryComplete(IMqttDeliveryToken token) {
+                    }
                 });
                 client.connect();
                 client.subscribe(topic);
@@ -44,15 +47,30 @@ public class MQTTSubscriber {
     }
 
     private static void saveToDatabase(String message) {
+        Connection connection = null;
+        PreparedStatement statement = null;
         try {
-            Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+            Class.forName("com.mysql.cj.jdbc.Driver"); // Registrar o driver JDBC
+
+            connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
             String query = "INSERT INTO tabela (mensagem) VALUES (?)";
-            PreparedStatement statement = connection.prepareStatement(query);
+            statement = connection.prepareStatement(query);
+
             statement.setString(1, message);
             statement.executeUpdate();
-            connection.close();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
