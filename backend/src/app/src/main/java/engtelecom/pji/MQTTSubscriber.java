@@ -16,7 +16,7 @@ public class MQTTSubscriber {
     private static final String topic = "temperature";
     private static final String dbUrl = "jdbc:mysql://localhost:3306/teste_local";
     private static final String dbUser = "root";
-    private static final String dbPassword = "faber180975";
+    private static final String dbPassword = "F!a@180975";
 
     public void executar() {
         try {
@@ -30,7 +30,6 @@ public class MQTTSubscriber {
                     public void messageArrived(String topic, MqttMessage message) throws ClassNotFoundException {
                         String content = new String(message.getPayload());
                         System.out.println("Mensagem recebida: " + content);
-                        System.out.println("1");
                         saveToDatabase(content);
                     }
                     
