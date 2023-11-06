@@ -5,7 +5,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.shortcuts import HttpResponseRedirect
 from django.http import JsonResponse
-from .models import DadosTemperaturaUmidade
+from django.shortcuts import render
+from .models import Temperatura
+from .models import Umidade
 
 def signup(request):
     if request.user.is_authenticated:
@@ -26,10 +28,7 @@ def signup(request):
         return render(request, 'signup.html', {'form': form})
    
 def home(request): 
-    if request.user.is_authenticated:
-        return redirect('/profile')
-    else:
-        return render(request, 'home.html')
+    return render(request, 'home.html')
    
   
 def signin(request):
@@ -50,41 +49,37 @@ def signin(request):
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})
   
-def profile(request):
-    # Adicione a lógica para buscar os dados do histórico de temperatura e umidade
-    historico = DadosTemperaturaUmidade.objects.all()  # Substitua pela consulta correta
-
-    context = {
-        'historico': historico,
-    }
-
-    return render(request, 'profile.html', context)
+def profile(request): 
+    return render(request, 'profile.html')
    
 def signout(request):
     logout(request)
     return redirect('/')
 
 def get_temperature(request):
-    # Simule a obtenção da temperatura de uma API externa
-    temperatura_atual = DadosTemperaturaUmidade.objects.latest('timestamp').temperatura
-
-    data = {
-        'temperatura': temperatura_atual,
-    }
-    return JsonResponse(data)
+    # Recupere o último registro de temperatura (substitua 'Temperatura' pelo seu modelo real)
+    temperatura_data = Temperatura.objects.last()
+    if temperatura_data:
+        temperatura_dict = {
+            'temperatura': temperatura_data.temperatura,
+            'timestamp': temperatura_data.timestamp
+        }
+        return JsonResponse(temperatura_dict)
+    else:
+        return JsonResponse({'error': 'Nenhum registro de temperatura encontrado'})
 
 def get_humidity(request):
-    umidade_atual = DadosTemperaturaUmidade.objects.latest('timestamp').umidade
+    # Recupere o último registro de umidade (substitua 'Umidade' pelo seu modelo real)
+    umidade_data = Umidade.objects.last()
+    if umidade_data:
+        umidade_dict = {
+            'umidade': umidade_data.umidade,
+            'timestamp': umidade_data.timestamp
+        }
+        return JsonResponse(umidade_dict)
+    else:
+        return JsonResponse({'error': 'Nenhum registro de umidade encontrado'})
 
-    data = {
-        'umidade': umidade_atual,
-    }
-    return JsonResponse(data)
-
-def get_latest_sensor_data(request):
-    latest_data = DadosTemperaturaUmidade.objects.latest('timestamp')
-    data = {
-        'temperatura': latest_data.temperatura,
-        'umidade': latest_data.umidade,
-    }
-    return JsonResponse(data)
+def sensor_data_view(request):
+    sensor_data = SensorData.objects.all()
+    return render(request, 'sensor_data.html', {'sensor_data': sensor_data})
