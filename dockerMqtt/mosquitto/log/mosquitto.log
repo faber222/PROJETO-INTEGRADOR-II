@@ -1060,4 +1060,9 @@ To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
 1699244882: Client ESP32Client has exceeded timeout, disconnecting.
 =======
 1699241737: Saving in-memory database to /mosquitto/data//mosquitto.db.
+<<<<<<< HEAD
+1699243538: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1699245339: Saving in-memory database to /mosquitto/data//mosquitto.db.
+=======
 >>>>>>> dbc26470c5e0d20f34953cadb025bd328c0d4e0c
+>>>>>>> f2e01c3fef0c980b58548bf9f6ae8bc9c2909136
