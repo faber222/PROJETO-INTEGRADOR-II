@@ -1,12 +1,48 @@
-{% extends 'base.html' %}
-  
-{% block title %}Login{% endblock %}
-  
-{% block content %}
-  <h2>Login</h2> {{ msg }}
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Login</button>
-  </form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="main-login">
+        <div class="left-login">
+			<img src="logo.png" class="left-login-image" alt="Logomarca">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+				<div class="title-container">
+					<input type="checkbox" name="darkmode-toggle">
+					<label for="darkmode-toggle"></label>
+				</div>
+				<h1>Login</h1>
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="usuario">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha">
+                </div>
+				<div class="forgot-password">
+                    <a href="#" class="forgot-password-link">Esqueci minha senha</a>
+                </div>
+                <button class="btn-login">Login</button>
+				<hr class="divider">
+				<div class="facebook-container">
+					<p class="login-with"> Logar com: </p>
+                    <button class="btn-login-logo">
+							<img src="fb.png" width="34px" height="34px"/>
+					</button>
+					<button class="btn-login-logo">
+							<img src="google.png" width="34px" height="34px"/>
+					</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
