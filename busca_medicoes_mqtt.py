@@ -5,13 +5,13 @@ def on_message(client, userdata, message):
     mensagem = message.payload.decode("utf-8")
     print(f"Mensagem recebida: {mensagem}")
 
-    
+
     # Conecte-se ao servidor MySQL
     connection = pymysql.connect(
         host='127.0.0.1',
         user='root',
-        password='Brc1234@',
-        database='Pji1234',
+        password='PudimAm@ssad0',
+        database='Pji',
         port=3306,
     )
 
@@ -31,9 +31,10 @@ def on_message(client, userdata, message):
     print("Mensagem salva no banco de dados.")
 
 
-
 # Configurar o cliente MQTT
 client = mqtt.Client()
+# Adicionar autenticação com nome de usuário e senha
+client.username_pw_set(username='guga', password='espsensors')
 client.on_message = on_message
 
 # Conectar ao broker MQTT
