@@ -200,17 +200,4 @@ body{
     height: 34px;
     border-radius: 50%;
 }
-.data-table {
-    border-collapse: collapse;
-    width: 100%;
-}
 
-.data-table th, .data-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.data-table th {
-    background-color: #f2f2f2;
-}
