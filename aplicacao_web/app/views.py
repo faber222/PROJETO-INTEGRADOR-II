@@ -89,7 +89,6 @@ def sensor_data_view(request):
 
 
 def analise(request, intervalo_tempo=None):
-    print(intervalo_tempo)
     # Obtenha os dados do banco de dados
     historico_temperatura = Temperatura.objects.all()
     historico_umidade = Umidade.objects.all()

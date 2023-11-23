@@ -19,45 +19,56 @@
         <button onclick="applyFilter('all_time')">Sempre</button>
     </div>
 
-    <div style="max-height: 400px; overflow-y: auto;">
-        <h2>Dados de Temperatura:</h2>
-        <table style="width: 100%; border-collapse: collapse;">
-            <thead>
-                <tr>
-                    <th>Data e Hora</th>
-                    <th>Temperatura (°C)</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for index, row in df_temperatura.iterrows %}
-                <tr>
-                    <td>{{ row.timestamp }}</td>
-                    <td>{{ row.temperatura|default:"N/A" }}°C</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div style="display: flex; flex-direction: column;">
+        <div class="scrollable-container">
+            <h2>Dados de Temperatura:</h2>
+            <div class="scrollable-table-container">
+                <table style="width: 80%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="width: 35%; text-align: left">Data e Hora</th>
+                            <th style="width: 25%; text-align: left">Temperatura</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for index, row in df_temperatura.iterrows %}
+                        <tr>
+                            <td>{{ row.timestamp }}</td>
+                            <td>{{ row.temperatura|default:"N/A" }}°C</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="scrollable-container">
+            <h2>Dados de Umidade:</h2>
+            <div class="scrollable-table-container">
+                <table style="width: 80%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="width: 35%; text-align: left">Data e Hora</th>
+                            <th style="width: 25%; text-align: left">Umidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for index, row in df_umidade.iterrows %}
+                        <tr>
+                            <td>{{ row.timestamp }}</td>
+                            <td>{{ row.umidade|default:"N/A" }}°C</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <div style="max-height: 400px; overflow-y: auto;">
-        <h2>Dados de Umidade:</h2>
-        <table style="width: 100%; border-collapse: collapse;">
-            <thead>
-                <tr>
-                    <th>Data e Hora</th>
-                    <th>Umidade (%)</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for index, row in df_umidade.iterrows %}
-                <tr>
-                    <td>{{ row.timestamp }}</td>
-                    <td>{{ row.umidade|default:"N/A" }}°C</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+
+
+
 </body>
 </html>
 
