@@ -1,5 +1,22 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<div class="filter-buttons">
+    <button onclick="applyFilter('today')">Hoje</button>
+    <button onclick="applyFilter('this_week')">Essa Semana</button>
+    <button onclick="applyFilter('this_month')">Esse Mês</button>
+    <button onclick="applyFilter('all_time')">Sempre</button>
+</div>
+
+<script>
+function applyFilter(intervaloTempo) {
+    // Redirecionar diretamente para a view no Django com o intervalo de tempo na query string
+    window.location.href = `/analise/${intervaloTempo}/`;
+}
+</script>
+
 <h2>Dados de Temperatura:</h2>
-<table>
+<table class="data_table">
     <thead>
         <tr>
             <th>Data e Hora</th>
@@ -10,7 +27,7 @@
         {% for index, row in df_temperatura.iterrows %}
         <tr>
             <td>{{ row.timestamp }}</td>
-            <td>{{ row.temperatura }}°C</td>
+            <td>{{ row.temperatura|default:"N/A" }}°C</td>
         </tr>
         {% endfor %}
     </tbody>
@@ -28,7 +45,7 @@
         {% for index, row in df_umidade.iterrows %}
         <tr>
             <td>{{ row.timestamp }}</td>
-            <td>{{ row.umidade }}%</td>
+            <td>{{ row.umidade|default:"N/A" }}°C</td>
         </tr>
         {% endfor %}
     </tbody>

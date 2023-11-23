@@ -9,6 +9,7 @@ from django.shortcuts import render
 from .models import Temperatura
 from .models import Umidade
 import pandas as pd
+from datetime import datetime, timedelta
 
 def signup(request):
     if request.user.is_authenticated:
@@ -86,26 +87,9 @@ def sensor_data_view(request):
     return render(request, 'sensor_data.html', {'sensor_data': sensor_data})
 
 
-def analise(request):
-    # Obtenha os dados do banco de dados
-    historico = DadoSensor.objects.all()
 
-    # Crie um DataFrame a partir dos dados do banco de dados
-    df = pd.DataFrame(list(historico.values()))
-
-    # Converta a coluna 'timestamp' para datetime
-    df['timestamp'] = pd.to_datetime(df['timestamp'])
-
-    # Ordene o DataFrame por timestamp, se necessário
-    df = df.sort_values(by='timestamp')
-
-    # Passe o DataFrame para o contexto
-    context = {'df': df}
-
-    # Renderize a página analise.html com o DataFrame no contexto
-    return render(request, 'analise.html', context)
-
-def analise(request):
+def analise(request, intervalo_tempo=None):
+    print(intervalo_tempo)
     # Obtenha os dados do banco de dados
     historico_temperatura = Temperatura.objects.all()
     historico_umidade = Umidade.objects.all()
@@ -122,8 +106,25 @@ def analise(request):
     df_temperatura = df_temperatura.sort_values(by='timestamp')
     df_umidade = df_umidade.sort_values(by='timestamp')
 
-    # Passe os DataFrames para o contexto
-    context = {'df_temperatura': df_temperatura, 'df_umidade': df_umidade}
+ # Lógica para converter o intervalo de tempo em um timedelta
+    if intervalo_tempo == 'today':
+        filtro_tempo = datetime.now() - timedelta(days=1)
+    elif intervalo_tempo == 'this_week':
+        filtro_tempo = datetime.now() - timedelta(weeks=1)
+    elif intervalo_tempo == 'this_month':
+        filtro_tempo = datetime.now() - timedelta(weeks=4)
+    else:
+        # Para 'all_time', não aplicamos nenhum filtro de tempo
+        filtro_tempo = None
 
-    # Renderize a página analise.html com os DataFrames no contexto
-    return render(request, 'analise.html', context)
+    # Aplicar o filtro de tempo nos DataFrames
+    if filtro_tempo is not None:
+        df_temperatura['timestamp'] = pd.to_datetime(df_temperatura['timestamp'], utc=True).dt.tz_localize(None)
+        df_umidade['timestamp'] = pd.to_datetime(df_umidade['timestamp'], utc=True).dt.tz_localize(None)
+
+        df_temperatura = df_temperatura[df_temperatura['timestamp'] >= filtro_tempo]
+        df_umidade = df_umidade[df_umidade['timestamp'] >= filtro_tempo]
+
+    # Restante do seu código...
+
+    return render(request, 'analise.html', {'df_temperatura': df_temperatura, 'df_umidade': df_umidade})
