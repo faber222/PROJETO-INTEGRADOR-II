@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Temperatura
 from .models import Umidade
+import pandas as pd
 
 def signup(request):
     if request.user.is_authenticated:
@@ -83,3 +84,46 @@ def get_humidity(request):
 def sensor_data_view(request):
     sensor_data = SensorData.objects.all()
     return render(request, 'sensor_data.html', {'sensor_data': sensor_data})
+
+
+def analise(request):
+    # Obtenha os dados do banco de dados
+    historico = DadoSensor.objects.all()
+
+    # Crie um DataFrame a partir dos dados do banco de dados
+    df = pd.DataFrame(list(historico.values()))
+
+    # Converta a coluna 'timestamp' para datetime
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
+
+    # Ordene o DataFrame por timestamp, se necessário
+    df = df.sort_values(by='timestamp')
+
+    # Passe o DataFrame para o contexto
+    context = {'df': df}
+
+    # Renderize a página analise.html com o DataFrame no contexto
+    return render(request, 'analise.html', context)
+
+def analise(request):
+    # Obtenha os dados do banco de dados
+    historico_temperatura = Temperatura.objects.all()
+    historico_umidade = Umidade.objects.all()
+
+    # Cria DataFrames a partir dos dados do banco de dados
+    df_temperatura = pd.DataFrame(list(historico_temperatura.values()))
+    df_umidade = pd.DataFrame(list(historico_umidade.values()))
+
+    # Converta a coluna 'timestamp' para datetime
+    df_temperatura['timestamp'] = pd.to_datetime(df_temperatura['timestamp'])
+    df_umidade['timestamp'] = pd.to_datetime(df_umidade['timestamp'])
+
+    # Ordene os DataFrames por timestamp, se necessário
+    df_temperatura = df_temperatura.sort_values(by='timestamp')
+    df_umidade = df_umidade.sort_values(by='timestamp')
+
+    # Passe os DataFrames para o contexto
+    context = {'df_temperatura': df_temperatura, 'df_umidade': df_umidade}
+
+    # Renderize a página analise.html com os DataFrames no contexto
+    return render(request, 'analise.html', context)

@@ -72,45 +72,16 @@
         <h2>Leituras dos Sensores:</h2>
         <div class="sensor-reading" id="temperatura">Temperatura: Aguardando dados...</div>
         <div class="sensor-reading" id="umidade">Umidade: Aguardando dados...</div>
-        <button id="mostrar-historico-btn">Mostrar Histórico de Temperatura e Umidade</button>
-    </div>
-
-    <div id="historico-table" style="display: none;">
-        <table>
-            <thead>
-                <tr>
-                    <th>Data e Hora</th>
-                    <th>Temperatura (°C)</th>
-                    <th>Umidade (%)</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-                {% for dado in historico %}
-                <tr>
-                    <td>{{ dado.timestamp }}</td>
-                    <td>{{ dado.temperatura }}°C</td>
-                    <td>{{ dado.umidade }}%</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <button id="analisar-dados-btn">Analisar Dados</button>
     </div>
 
     <script>
-        const mostrarHistoricoBtn = document.getElementById('mostrar-historico-btn');
-        const historicoTable = document.getElementById('historico-table');
+        const analisarDadosBtn = document.getElementById('analisar-dados-btn');
         const temperaturaDiv = document.getElementById('temperatura');
         const umidadeDiv = document.getElementById('umidade');
     
-        mostrarHistoricoBtn.addEventListener('click', () => {
-            if (historicoTable.style.display === 'none') {
-                historicoTable.style.display = 'block';  // Mostra a tabela ao clicar no botão
-                mostrarHistoricoBtn.textContent = 'Fechar Histórico de Temperatura e Umidade';
-            } else {
-                historicoTable.style.display = 'none';  // Oculta a tabela ao clicar novamente no botão
-                mostrarHistoricoBtn.textContent = 'Mostrar Histórico de Temperatura e Umidade';
-            }
+        analisarDadosBtn.addEventListener('click', () => {
+            window.location.href = '/analise/';  // Redireciona para a página de análise ao clicar no botão
         });
     
         // Função para obter a temperatura atual
@@ -146,6 +117,6 @@
             getTemperature();
             getHumidity();
         }, 10000); // 10 segundos em milissegundos
-    </script>
+    </script>    
 </body>
 </html>

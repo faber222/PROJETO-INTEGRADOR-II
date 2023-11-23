@@ -1,0 +1,35 @@
+<h2>Dados de Temperatura:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Data e Hora</th>
+            <th>Temperatura (°C)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for index, row in df_temperatura.iterrows %}
+        <tr>
+            <td>{{ row.timestamp }}</td>
+            <td>{{ row.temperatura }}°C</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Dados de Umidade:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Data e Hora</th>
+            <th>Umidade (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for index, row in df_umidade.iterrows %}
+        <tr>
+            <td>{{ row.timestamp }}</td>
+            <td>{{ row.umidade }}%</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
