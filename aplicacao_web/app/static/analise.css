@@ -1,0 +1,57 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: white;
+}
+
+.filter-buttons {
+    background-color: #444;
+    overflow: hidden;
+}
+
+.filter-buttons button {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-buttons button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.scrollable-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #555;
+    margin-bottom: 10px;
+}
+
+.scrollable-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #444;
+}
+
+.scrollable-table th, .scrollable-table td {
+    border: 1px solid #555;
+    padding: 8px;
+    text-align: left;
+    color: white;
+}
+
+.scrollable-table th {
+    background-color: #333;
+    color: white;
+}
