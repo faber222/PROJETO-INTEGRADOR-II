@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+	background-color: var(--bg-theme);
+	transition: background 0.3s linear;
+	--text-theme: #F2CD00;
+	--bg-theme: #08080F;
+	--bg-card-login: #242325;
+	--bg-card-login-shadow: #000;
+	--bg-change-switch: #242424;
+	--bg-label-switch: linear-gradient(to bottom, rgba(255,214,94,1) 0%,rgba(254,191,4,1) 100%);
+	--bg-input: #363636;
+	--bg-btn-login: #F2CD00;
+	--bg-btn-login-shadow: 0px 10px 40px -12px rgb(141, 101, 0);
+	--text-btn-login: #000;
+	--login-image: url('./img/logo.png');
+}
+
+.light {
+	--text-theme: #000;
+	--bg-theme: #FFFFF;
+	--bg-card-login: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%);
+	--bg-card-login-shadow: #ffff;
+	--bg-change-switch: #ffff;
+	--bg-label-switch: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 100%);
+	--bg-input: linear-gradient(to bottom, rgba(230,230,230,1) 0%,rgba(200,200,200,1) 100%);
+	--bg-btn-login: linear-gradient(to bottom, rgba(230,230,230,1) 0%,rgba(200,200,200,1) 100%);
+	--bg-btn-login-shadow: 0px 10px 40px -12px rgba(14,14,14,1);
+	--text-btn-login: #000;
+	--login-image: url('./img/logo.png');
+}
+
+.main-login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+	background-image: var(--login-image);
+	background-position: center;
+	background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login > h1 {
+    color:var(--text-theme);
+}
+
+.left-login-image {
+	width: 35vw;
+}
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.card-login{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px 35px;
+	background: var(--bg-card-login);
+	transition: background 0.5s linear;
+    border-radius: 25px;
+    box-shadow: 0px 10px 40px var(--bg-card-login-shadow);
+}
+
+.title-container{
+	display: flex;
+    justify-content: left;
+    width: 100%;
+}
+
+.title-container > label {
+	width: 50px;
+	height: 25px;
+	position: relative;
+	display: inline-block;
+	border-radius: 200px;
+	cursor:pointer;
+	user-select: none;
+	background-color:var(--bg-change-switch);
+	box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+	transition: background 0.5s linear;
+}
+
+.title-container > label:after {
+	content: "";
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top:0.1px;
+	left:0.2px;
+	background: var(--bg-label-switch);
+	border-radius: 250px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+}
+.title-container > input {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+.title-container > input:checked + label:after{
+	left: 49px;
+	transform: translateX(-100%);
+	background: var(--bg-label-switch);
+}
+
+.title-container > label, label:after {
+	transition: 0.3s
+}
+
+.card-login > h1 {
+    color: var(--text-theme);
+    font-weight: 800;
+    margin: 0;
+    align-content: center;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input {
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
+    background: var(--bg-input);
+    color: var(--text-theme);
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px var(--bg-card-login-shadow);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label {
+    color: var(--text-theme);
+    margin-bottom: 5px;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background: var(--bg-btn-login);
+    color: var(--text-btn-login);
+    cursor: pointer;
+    box-shadow: var(--bg-btn-login-shadow);
+}
+
+.forgot-password {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.forgot-password-link {
+    text-decoration: underline;
+    color: var(--text-theme);
+    align-self: flex-start;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-theme);
+    margin: 10px 0;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-with {
+	color: var(--text-theme);
+}
+.btn-login-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.button-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
