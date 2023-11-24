@@ -12,22 +12,19 @@ import pandas as pd
 from datetime import datetime, timedelta
 
 def signup(request):
-    if request.user.is_authenticated:
-        return redirect('/')
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
             username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
+            password = form.cleaned_data.get('password1')  # Use 'password1' for the first password field
             user = authenticate(username=username, password=password)
             login(request, user)
             return redirect('/')
-        else:
-            return render(request, 'signup.html', {'form': form})
     else:
         form = UserCreationForm()
-        return render(request, 'signup.html', {'form': form})
+
+    return render(request, 'signup.html', {'form': form})
    
 def home(request): 
     return render(request, 'home.html')

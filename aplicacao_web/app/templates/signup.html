@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
-	<script src="{% static 'signup.js'}" defer></script>
+	<script src="{% static 'signup.js' %}" defer></script>
 	<title>Cadastro</title>
 </head>
 <body>
@@ -17,34 +18,50 @@
 			<div class="card-login">
 				<div class="title-container">
 					<input type="checkbox" id="btn" name="btn">
-					<label for="btn">
-					</label>
+					<label for="btn"></label>
 				</div>
 				<h1>Criar Conta</h1>
-				<form method="post" action="{% url 'signin' %}">
-				{% csrf_token %}
+
+				<form method="post" action="{% url 'signup' %}">
+					{% csrf_token %}
 					<div class="textfield">
 						<label for="usuario">Usuário</label>
-						<input type="text" name="usuario">
+						{{ form.username }}
+						{% for error in form.username.errors %}
+							<p style="color: red">{{ error }}</p>
+						{% endfor %}
 					</div>
+
 					<div class="textfield">
 						<label for="senha">Senha</label>
-						<input type="password" name="senha">
+						{{ form.password1 }}
+						{% for error in form.password1.errors %}
+							<p style="color: red">{{ error }}</p>
+						{% endfor %}
+
+					<div class="textfield">
+						<label for="senha">Confirmar Senha</label>
+						{{ form.password2 }}
+						{% for error in form.password2.errors %}
+							<p style="color: red">{{ error }}</p>
+						{% endfor %}
+
 					</div>
+
 					<div class="forgot-password">
 						<a href="#" class="forgot-password-link">Esqueci minha senha</a>
 					</div>
-					<button class="btn-cadastro">Login</button>
+					<button type="submit" class="btn-cadastro">Registrar</button>
 				</form>
+				
+				
+				
+
 				<hr class="divider">
 				<div class="auth-container">
 					<p class="cadastro-with"> Logar com: </p>
 					<button class="btn-cadastro-logo">
-						<img src="{% static './img/google.png' %}" width="34px" height="34px"/>
+						<img src="{% static 'img/google.png' %}" width="34px" height="34px"/>
 					</button>
 				</div>
 			</div>
-		</div>
-	</div>
-</body>
-</html>

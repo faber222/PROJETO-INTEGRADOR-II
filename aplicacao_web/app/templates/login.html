@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE-edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
-	<script src="{% static 'login.js'}" defer></script>
+	<script src="{% static 'login.js'%}" defer></script>
 	<title>Login</title>
 </head>
 <body>
@@ -25,11 +25,11 @@
 				{% csrf_token %}
 					<div class="textfield">
 						<label for="usuario">Usuário</label>
-						<input type="text" name="usuario">
+						<input type="text" name="username" required>
 					</div>
 					<div class="textfield">
 						<label for="senha">Senha</label>
-						<input type="password" name="senha">
+						<input type="password" name="password" required>
 					</div>
 					<div class="forgot-password">
 						<a href="#" class="forgot-password-link">Esqueci minha senha</a>
@@ -37,6 +37,7 @@
 					<button class="btn-login">Login</button>
 				</form>
 				<form method="post" action="{% url 'signup' %}">
+					{% csrf_token %}
 					<button class="btn-cadastro">Criar Conta</button>
 				</form>
 				<hr class="divider">
