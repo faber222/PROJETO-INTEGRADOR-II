@@ -15,17 +15,26 @@ def on_message(client, userdata, message):
         port=3306,
     )
 
+    pares = mensagem.split(';')
+
+    if len(pares) >= 2:
+        chave = pares[0]
+        valor = pares[1]
+        print(f"Chave: {chave}, Valor: {valor}")
+    else:
+        print("A mensagem não contém um par chave-valor válido.")
+
     cursor = connection.cursor()
 
     if message.topic == 'temperature':
-        insert_query = "INSERT INTO temperatura (temperatura) VALUES (%s)"
+        insert_query = "INSERT INTO temperatura (temperatura, idEsp) VALUES (%s, %s)"
     elif message.topic == 'humidity':
-        insert_query = "INSERT INTO umidade (umidade) VALUES (%s)"
+        insert_query = "INSERT INTO umidade (umidade, idEsp) VALUES (%s, %s)"
     else:
         print("Tópico incorreto!")
         return
 
-    cursor.execute(insert_query, (mensagem,))
+    cursor.execute(insert_query, (valor, chave))
     connection.commit()
 
     print("Mensagem salva no banco de dados.")
@@ -44,3 +53,4 @@ client.subscribe('humidity')
 
 # Iniciar o loop para escutar mensagens
 client.loop_forever()
+
