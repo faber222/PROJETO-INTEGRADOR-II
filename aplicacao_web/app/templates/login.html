@@ -31,14 +31,14 @@
 						<label for="senha">Senha</label>
 						<input type="password" name="password" required>
 					</div>
-					<div class="forgot-password">
+					<div class="auth-login-options">
+						<form method="post" action="{% url 'signup' %}">
+							{% csrf_token %}
+							<a class="create-account-link">Esqueci minha senha</a>
+						</form>
 						<a href="#" class="forgot-password-link">Esqueci minha senha</a>
 					</div>
 					<button class="btn-login">Login</button>
-				</form>
-				<form method="post" action="{% url 'signup' %}">
-					{% csrf_token %}
-					<button class="btn-cadastro">Criar Conta</button>
 				</form>
 				<hr class="divider">
 				<div class="auth-container">

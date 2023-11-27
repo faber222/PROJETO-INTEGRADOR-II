@@ -190,13 +190,19 @@ body{
     box-shadow: var(--bg-btn-shadow);
 }
 
-.forgot-password {
+.auth-login-options {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .forgot-password-link {
+    text-decoration: underline;
+    color: var(--text-theme);
+    align-self: flex-start;
+}
+
+.create-account-link {
     text-decoration: underline;
     color: var(--text-theme);
     align-self: flex-start;
