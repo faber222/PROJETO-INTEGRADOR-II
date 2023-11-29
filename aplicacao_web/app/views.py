@@ -27,12 +27,12 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
    
 def home(request): 
-    return render(request, 'home.html')
+    return render(request, 'login.html')
    
   
 def signin(request):
     if request.user.is_authenticated:
-        return render(request, 'home.html')
+        return render(request, 'profile.html')
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
