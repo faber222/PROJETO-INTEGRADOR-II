@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from .models import Temperatura
 from .models import Umidade
+from .models import Luminosidade
 import pandas as pd
 from datetime import datetime, timedelta
 
@@ -56,11 +57,11 @@ def signout(request):
     return redirect('/')
 
 def get_temperature(request):
-    # Recupere o último registro de temperatura (substitua 'Temperatura' pelo seu modelo real)
     temperatura_data = Temperatura.objects.last()
     if temperatura_data:
         temperatura_dict = {
             'temperatura': temperatura_data.temperatura,
+            'idEsp' : temperatura_data.idEsp,
             'timestamp': temperatura_data.timestamp
         }
         return JsonResponse(temperatura_dict)
@@ -68,16 +69,28 @@ def get_temperature(request):
         return JsonResponse({'error': 'Nenhum registro de temperatura encontrado'})
 
 def get_humidity(request):
-    # Recupere o último registro de umidade (substitua 'Umidade' pelo seu modelo real)
     umidade_data = Umidade.objects.last()
     if umidade_data:
         umidade_dict = {
             'umidade': umidade_data.umidade,
+            'idEsp' : umidade_data.idEsp,
             'timestamp': umidade_data.timestamp
         }
         return JsonResponse(umidade_dict)
     else:
         return JsonResponse({'error': 'Nenhum registro de umidade encontrado'})
+    
+def get_luminosidade(request):
+    luminosidade_data = Luminosidade.objects.last()
+    if luminosidade_data:
+        luminosidade_dict = {
+            'luminosidade': luminosidade_data.umidade,
+            'idEsp' : luminosidade_data.idEsp,
+            'timestamp': luminosidade_data.timestamp
+        }
+        return JsonResponse(luminosidade_dict)
+    else:
+        return JsonResponse({'error': 'Nenhum registro de luminosidade encontrado'})
 
 def sensor_data_view(request):
     sensor_data = SensorData.objects.all()

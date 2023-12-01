@@ -72,6 +72,7 @@
         <h2>Leituras dos Sensores:</h2>
         <div class="sensor-reading" id="temperatura">Temperatura: Aguardando dados...</div>
         <div class="sensor-reading" id="umidade">Umidade: Aguardando dados...</div>
+        <div class="sensor-reading" id="luminosidade">Luminosidade: Aguardando dados...</div>
         <button id="analisar-dados-btn">Analisar Dados</button>
     </div>
 
@@ -79,6 +80,8 @@
         const analisarDadosBtn = document.getElementById('analisar-dados-btn');
         const temperaturaDiv = document.getElementById('temperatura');
         const umidadeDiv = document.getElementById('umidade');
+        const luminosidadeDiv = document.getElementById('luminosidade');
+
     
         analisarDadosBtn.addEventListener('click', () => {
             window.location.href = '/analise/';  // Redireciona para a página de análise ao clicar no botão
@@ -107,15 +110,28 @@
                     console.error('Erro ao obter umidade: ', error);
                 });
         }
+
+        function getLuminosidade() {
+            fetch('/get_luminosidade/')  // Atualize a URL conforme necessário
+                .then(response => response.json())
+                .then(data => {
+                    luminosidadeDiv.textContent = `Luminosidade: ${data.luminosidade}%`;
+                })
+                .catch(error => {
+                    console.error('Erro ao obter luminosidade: ', error);
+                });
+        }
     
         // Chame as funções para obter a temperatura e a umidade ao carregar a página
         getTemperature();
         getHumidity();
+        getLuminosidade();
     
         // Crie um intervalo para atualizar os valores a cada 10 segundos
         setInterval(() => {
             getTemperature();
             getHumidity();
+            getLuminosidade();
         }, 10000); // 10 segundos em milissegundos
     </script>    
 </body>

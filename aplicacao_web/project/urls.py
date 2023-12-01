@@ -27,8 +27,8 @@ urlpatterns = [
     path('profile/',views.profile, name='profile'),
     path('get_temperature/', views.get_temperature, name='get_temperature'),
     path('get_humidity/', views.get_humidity, name='get_humidity'),
+    path('get_luminosidade/', views.get_luminosidade, name='get_luminosidade'),
     path('analise/', views.analise, name='analise'),
     path('analise/<str:intervalo_tempo>/', views.analise, name='analise'),
-
 ]
 
