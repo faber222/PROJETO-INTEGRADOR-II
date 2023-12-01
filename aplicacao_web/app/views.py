@@ -84,7 +84,7 @@ def get_luminosidade(request):
     luminosidade_data = Luminosidade.objects.last()
     if luminosidade_data:
         luminosidade_dict = {
-            'luminosidade': luminosidade_data.umidade,
+            'luminosidade': luminosidade_data.luminosidade,
             'idEsp' : luminosidade_data.idEsp,
             'timestamp': luminosidade_data.timestamp
         }
