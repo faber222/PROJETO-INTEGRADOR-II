@@ -104,7 +104,7 @@
             fetch('/get_humidity/')  // Atualize a URL conforme necessário
                 .then(response => response.json())
                 .then(data => {
-                    umidadeDiv.textContent = `Umidade: ${data.umidade}%`;
+                    umidadeDiv.textContent = `Umidade: ${data.umidade}`;
                 })
                 .catch(error => {
                     console.error('Erro ao obter umidade: ', error);
@@ -115,7 +115,7 @@
             fetch('/get_luminosidade/')  // Atualize a URL conforme necessário
                 .then(response => response.json())
                 .then(data => {
-                    luminosidadeDiv.textContent = `Luminosidade: ${data.luminosidade}%`;
+                    luminosidadeDiv.textContent = `Luminosidade: ${data.luminosidade}`;
                 })
                 .catch(error => {
                     console.error('Erro ao obter luminosidade: ', error);

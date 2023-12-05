@@ -18,7 +18,7 @@ class Umidade(models.Model):
         db_table = 'umidade'
         
 class Luminosidade(models.Model):
-    luminosidade = models.BooleanField()
+    ligado = models.BooleanField()
     idEsp = models.IntegerField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
