@@ -115,7 +115,7 @@
             fetch('/get_luminosidade/')  // Atualize a URL conforme necessário
                 .then(response => response.json())
                 .then(data => {
-                    luminosidadeDiv.textContent = `Luminosidade: ${data.luminosidade}`;
+                    luminosidadeDiv.textContent = `Luz do ambiente: ${data.luminosidade}`;
                 })
                 .catch(error => {
                     console.error('Erro ao obter luminosidade: ', error);

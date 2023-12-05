@@ -84,9 +84,9 @@ def get_luminosidade(request):
     luminosidade_data = Luminosidade.objects.last()
     if luminosidade_data:
         if (luminosidade_data.ligado == True):
-            luminosidade_data.ligado = 'Ligado'
+            luminosidade_data.ligado = 'Ligada'
         else:
-            luminosidade_data.ligado = 'Desligado'
+            luminosidade_data.ligado = 'Desligada'
         luminosidade_dict = {
             'luminosidade': luminosidade_data.ligado,
             'idEsp' : luminosidade_data.idEsp,
