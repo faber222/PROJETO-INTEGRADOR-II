@@ -1,6 +1,4 @@
 {% load static %}
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -19,7 +17,7 @@
         <button onclick="applyFilter('all_time')">Sempre</button>
     </div>
 
-    <div style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column">
         <div class="scrollable-container">
             <h2>Dados de Temperatura:</h2>
             <div class="scrollable-table-container">
@@ -40,8 +38,13 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+            <div>
+                <iframe src="{% static 'plots/graph_temperatura.html' %}" width="800" height="400" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+            </div>
+            
+    
 
+     
 
         <div class="scrollable-container">
             <h2>Dados de Umidade:</h2>
@@ -64,7 +67,9 @@
                 </table>
             </div>
         </div>
+        <iframe src="{% static 'plots/graph_umidade.html' %}" width="800" height="400" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
     </div>
+</div>
 
 
 

@@ -11,6 +11,11 @@ from .models import Umidade
 from .models import Luminosidade
 import pandas as pd
 from datetime import datetime, timedelta
+import plotly.express as px
+from plotly.offline import plot
+import plotly.io as pio
+from django.templatetags.static import static
+import os
 
 def signup(request):
     if request.method == 'POST':
@@ -40,7 +45,7 @@ def signin(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/profile') #profile
+            return render(request, 'profile.html') #profile
         else:
             msg = 'Error Login'
             form = AuthenticationForm(request.POST)
@@ -119,7 +124,7 @@ def analise(request, intervalo_tempo=None):
     df_temperatura = df_temperatura.sort_values(by='timestamp')
     df_umidade = df_umidade.sort_values(by='timestamp')
 
- # Lógica para converter o intervalo de tempo em um timedelta
+    # Lógica para converter o intervalo de tempo em um timedelta
     if intervalo_tempo == 'today':
         filtro_tempo = datetime.now() - timedelta(days=1)
     elif intervalo_tempo == 'this_week':
@@ -138,6 +143,20 @@ def analise(request, intervalo_tempo=None):
         df_temperatura = df_temperatura[df_temperatura['timestamp'] >= filtro_tempo]
         df_umidade = df_umidade[df_umidade['timestamp'] >= filtro_tempo]
 
-    # Restante do seu código...
+    # Criação dos gráficos
+    fig_temperatura = px.line(df_temperatura, x='timestamp', y='temperatura', labels={'temperatura': 'Temperatura (°C)'}, title='Gráfico de Temperatura')
+    fig_umidade = px.line(df_umidade, x='timestamp', y='umidade', labels={'umidade': 'Umidade (%)'}, title='Gráfico de Umidade')
 
-    return render(request, 'analise.html', {'df_temperatura': df_temperatura, 'df_umidade': df_umidade})
+    # Salve os gráficos em arquivos HTML temporários dentro do diretório 'plots'
+    temp_path_temperatura = os.path.join('app', 'static', 'plots', 'graph_temperatura.html')
+    temp_path_umidade = os.path.join('app', 'static', 'plots', 'graph_umidade.html')
+
+    pio.write_html(fig_temperatura, file=temp_path_temperatura, auto_open=False)
+    pio.write_html(fig_umidade, file=temp_path_umidade, auto_open=False)
+
+    return render(request, 'analise.html', {
+        'df_temperatura': df_temperatura,
+        'df_umidade': df_umidade,
+        'temp_path_temperatura': temp_path_temperatura,
+        'temp_path_umidade': temp_path_umidade,
+    })
