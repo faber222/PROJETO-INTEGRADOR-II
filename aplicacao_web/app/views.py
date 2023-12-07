@@ -9,6 +9,8 @@ from django.shortcuts import render
 from .models import Temperatura
 from .models import Umidade
 from .models import Luminosidade
+from .models import Lampada
+from .models import Ar_Condicionado
 import pandas as pd
 from datetime import datetime, timedelta
 import plotly.express as px
@@ -16,6 +18,9 @@ from plotly.offline import plot
 import plotly.io as pio
 from django.templatetags.static import static
 import os
+from django.utils import timezone
+from datetime import timedelta
+
 
 def signup(request):
     if request.method == 'POST':
@@ -54,8 +59,16 @@ def signin(request):
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})
   
-def profile(request): 
-    return render(request, 'profile.html')
+def profile(request):
+    lampada_status = Lampada.objects.latest('timestamp')
+    ar_condicionado_status = Ar_Condicionado.objects.latest('timestamp')
+
+    context = {
+        'lampada_status': lampada_status,
+        'ar_condicionado_status': ar_condicionado_status,
+    }
+
+    return render(request, 'profile.html', context)
    
 def signout(request):
     logout(request)
@@ -160,3 +173,30 @@ def analise(request, intervalo_tempo=None):
         'temp_path_temperatura': temp_path_temperatura,
         'temp_path_umidade': temp_path_umidade,
     })
+    
+    
+def ligar_desligar_lampada(request):
+    try:
+        lampada_status = Lampada.objects.latest('timestamp')
+    except Lampada.DoesNotExist:
+        # Se não houver nenhum objeto, crie um novo
+        lampada_status = Lampada.objects.create(ligado=False, idEsp=1)  # Substitua 1 pelo valor correto
+
+    lampada_status.ligado = not lampada_status.ligado
+    lampada_status.timestamp = timezone.now() - timedelta(hours=3)  # Subtrai 3 horas do timestamp
+    lampada_status.save()
+
+    return redirect('profile')
+
+def ligar_desligar_ar_condicionado(request):
+    try:
+        ar_condicionado_status = Ar_Condicionado.objects.latest('timestamp')
+    except Ar_Condicionado.DoesNotExist:
+        # Se não houver nenhum objeto, crie um novo
+        ar_condicionado_status = Ar_Condicionado.objects.create(ligado=False, idEsp=1)  # Substitua 1 pelo valor correto
+
+    ar_condicionado_status.ligado = not ar_condicionado_status.ligado
+    ar_condicionado_status.timestamp = timezone.now() - timedelta(hours=3)  # Subtrai 3 horas do timestamp
+    ar_condicionado_status.save()
+
+    return redirect('profile')

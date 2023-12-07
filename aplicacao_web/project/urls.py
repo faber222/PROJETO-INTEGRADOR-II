@@ -30,5 +30,7 @@ urlpatterns = [
     path('get_luminosidade/', views.get_luminosidade, name='get_luminosidade'),
     path('analise/', views.analise, name='analise'),
     path('analise/<str:intervalo_tempo>/', views.analise, name='analise'),
+    path('ligar_desligar_lampada/', views.ligar_desligar_lampada, name='ligar_desligar_lampada'),
+    path('ligar_desligar_ar_condicionado/', views.ligar_desligar_ar_condicionado, name='ligar_desligar_ar_condicionado'),
 ]
 

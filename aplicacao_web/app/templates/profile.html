@@ -74,6 +74,16 @@
         <div class="sensor-reading" id="umidade">Umidade: Aguardando dados...</div>
         <div class="sensor-reading" id="luminosidade">Luminosidade: Aguardando dados...</div>
         <button id="analisar-dados-btn">Analisar Dados</button>
+        <form action="{% url 'ligar_desligar_lampada' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Ligar/Desligar Lâmpada</button>
+        </form>
+
+        <form action="{% url 'ligar_desligar_ar_condicionado' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Ligar/Desligar Ar-condicionado</button>
+        </form>
+    </div>
     </div>
 
     <script>
