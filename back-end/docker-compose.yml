@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  backClient2Db:
+    image: {IMAGE_NAME}
+    build:
+      context: ./backendClient2Database
+    restart: always 
+    environment:
+      - MYSQL_HOST={MYSQL_IP}
+      - MYSQL_USER={MYSQL_USER}
+      - MYSQL_PASSWORD={MYSQL_PASSWD}
+      - MYSQL_DB={MYSQL_DB}
+      - MQTT_USERNAME={MQTT_USER}
+      - MQTT_PASSWORD={MQTT_PASSWD}
+      - MQTT_BROKER={MQTT_IP}
+  backDb2Client:
+    image: {IMAGE_NAME}
+    build:
+      context: ./backendDatabase2Client
+    restart: always 
+    environment:
+      - MYSQL_HOST={MYSQL_IP}
+      - MYSQL_USER={MYSQL_USER}
+      - MYSQL_PASSWORD={MYSQL_PASSWD}
+      - MYSQL_DB={MYSQL_DB}
+      - MQTT_USERNAME={MQTT_USER}
+      - MQTT_PASSWORD={MQTT_PASSWD}
+      - MQTT_BROKER={MQTT_IP}
