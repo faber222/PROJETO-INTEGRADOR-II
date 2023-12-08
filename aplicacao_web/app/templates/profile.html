@@ -64,7 +64,13 @@
             color: #F2CD00; /* Cor do texto: F2CD00 */
         }
 
-        button {
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .button-container button {
             background-color: #F2CD00; /* Cor do botão: F2CD00 */
             color: #08080F; /* Cor do texto no botão: 08080F */
             padding: 25px;
@@ -72,12 +78,29 @@
             border: none;
             border-radius: 25px;
             cursor: pointer;
-            margin-right: 10px;
-            margin-bottom: 10px;
         }
 
-        button:hover {
+        .button-container button:hover {
             background-color: #ffd700; /* Cor do botão ao passar o mouse: Amarelo mais claro */
+        }
+
+        #analisar-dados-btn {
+            background-color: #F2CD00; /* Cor do botão: F2CD00 */
+            color: #08080F; /* Cor do texto no botão: 08080F */
+            padding: 20px;
+            width: 150px; /* Largura fixa */
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #analisar-dados-btn:hover {
+            background-color: #ffd700; /* Cor do botão ao passar o mouse: Amarelo mais claro */
+        }
+
+        .button-container .button-group {
+            display: flex;
+            gap: 10px; /* Espaço entre os botões */
         }
     </style>
 </head>
@@ -92,17 +115,22 @@
         <div class="sensor-reading" id="temperatura">Temperatura: Aguardando dados...</div>
         <div class="sensor-reading" id="umidade">Umidade: Aguardando dados...</div>
         <div class="sensor-reading" id="luminosidade">Luminosidade: Aguardando dados...</div>
-        <button id="analisar-dados-btn">Analisar Dados</button>
-        <form action="{% url 'ligar_desligar_lampada' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Ligar/Desligar Lâmpada</button>
-        </form>
 
-        <form action="{% url 'ligar_desligar_ar_condicionado' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Ligar/Desligar Ar-condicionado</button>
-        </form>
-    </div>
+        <div class="button-container">
+            <div class="button-group">
+                <form action="{% url 'ligar_desligar_lampada' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Ligar/Desligar Lâmpada</button>
+                </form>
+    
+                <form action="{% url 'ligar_desligar_ar_condicionado' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Ligar/Desligar Ar-condicionado</button>
+                </form>
+            </div>
+            
+            <button id="analisar-dados-btn">Analisar Dados</button>
+        </div>
     </div>
 
     <script>
@@ -111,11 +139,10 @@
         const umidadeDiv = document.getElementById('umidade');
         const luminosidadeDiv = document.getElementById('luminosidade');
 
-    
         analisarDadosBtn.addEventListener('click', () => {
             window.location.href = '/analise/';  // Redireciona para a página de análise ao clicar no botão
         });
-    
+
         // Função para obter a temperatura atual
         function getTemperature() {
             fetch('/get_temperature/')  // Atualize a URL conforme necessário
@@ -127,7 +154,7 @@
                     console.error('Erro ao obter temperatura: ', error);
                 });
         }
-    
+
         // Função para obter a umidade atual
         function getHumidity() {
             fetch('/get_humidity/')  // Atualize a URL conforme necessário
@@ -150,18 +177,18 @@
                     console.error('Erro ao obter luminosidade: ', error);
                 });
         }
-    
+
         // Chame as funções para obter a temperatura e a umidade ao carregar a página
         getTemperature();
         getHumidity();
         getLuminosidade();
-    
+
         // Crie um intervalo para atualizar os valores a cada 10 segundos
         setInterval(() => {
             getTemperature();
             getHumidity();
             getLuminosidade();
-        }, 1000); // 10 segundos em milissegundos
-    </script>    
+        }, 10000); // 10 segundos em milissegundos
+    </script>
 </body>
 </html>
