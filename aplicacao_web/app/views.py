@@ -180,12 +180,12 @@ def ligar_desligar_lampada(request):
         lampada_status = Lampada.objects.latest('timestamp')
     except Lampada.DoesNotExist:
         # Se não houver nenhum objeto, crie um novo
-        lampada_status = Lampada.objects.create(ligado=False, idEsp=1)  # Substitua 1 pelo valor correto
+        lampada_status = Lampada.objects.create(ligado=False, idEsp=1234)  # Substitua 1 pelo valor correto
 
     lampada_status.ligado = not lampada_status.ligado
     lampada_status.timestamp = timezone.now() - timedelta(hours=3)  # Subtrai 3 horas do timestamp
-    lampada_status.save()
-
+    lampada_status.save() 
+    
     return redirect('profile')
 
 def ligar_desligar_ar_condicionado(request):
@@ -193,7 +193,7 @@ def ligar_desligar_ar_condicionado(request):
         ar_condicionado_status = Ar_Condicionado.objects.latest('timestamp')
     except Ar_Condicionado.DoesNotExist:
         # Se não houver nenhum objeto, crie um novo
-        ar_condicionado_status = Ar_Condicionado.objects.create(ligado=False, idEsp=1)  # Substitua 1 pelo valor correto
+        ar_condicionado_status = Ar_Condicionado.objects.create(ligado=False, idEsp=1234)  # Substitua 1 pelo valor correto
 
     ar_condicionado_status.ligado = not ar_condicionado_status.ligado
     ar_condicionado_status.timestamp = timezone.now() - timedelta(hours=3)  # Subtrai 3 horas do timestamp

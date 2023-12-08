@@ -6,14 +6,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #08080F; /* Cor de fundo: 08080F */
+            color: #F2CD00; /* Cor do texto: F2CD00 */
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #3498db;
-            color: #fff;
+            background-color: #F2CD00; /* Cor de fundo: F2CD00 */
+            color: #08080F; /* Cor do texto: 08080F */
             text-align: center;
             padding: 20px;
         }
@@ -29,15 +30,16 @@
         #sensor-readings {
             max-width: 500px;
             margin: 20px auto;
-            background-color: #fff;
+            background-color: #08080F; /* Cor de fundo: 08080F */
             border-radius: 5px;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Cor da sombra: Branco */
         }
 
         .sensor-reading {
             font-size: 20px;
             margin-bottom: 10px;
+            color: #F2CD00; /* Cor do texto: F2CD00 */
         }
 
         .sensor-info {
@@ -51,14 +53,31 @@
         }
 
         th, td {
-            border: 1px solid #ddd;
+            border: 1px solid #F2CD00; /* Cor da borda: F2CD00 */
             padding: 8px;
             text-align: center;
+            color: #F2CD00; /* Cor do texto: F2CD00 */
         }
 
         th {
-            background-color: #3498db;
-            color: #fff;
+            background-color: #08080F; /* Cor de fundo: 08080F */
+            color: #F2CD00; /* Cor do texto: F2CD00 */
+        }
+
+        button {
+            background-color: #F2CD00; /* Cor do botão: F2CD00 */
+            color: #08080F; /* Cor do texto no botão: 08080F */
+            padding: 25px;
+            width: 150px; /* Largura fixa */
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #ffd700; /* Cor do botão ao passar o mouse: Amarelo mais claro */
         }
     </style>
 </head>
@@ -102,7 +121,7 @@
             fetch('/get_temperature/')  // Atualize a URL conforme necessário
                 .then(response => response.json())
                 .then(data => {
-                    temperaturaDiv.textContent = `Temperatura: ${data.temperatura}°C`;
+                    temperaturaDiv.textContent = `Temperatura: ${data.temperatura} °C`;
                 })
                 .catch(error => {
                     console.error('Erro ao obter temperatura: ', error);
@@ -114,7 +133,7 @@
             fetch('/get_humidity/')  // Atualize a URL conforme necessário
                 .then(response => response.json())
                 .then(data => {
-                    umidadeDiv.textContent = `Umidade: ${data.umidade}`;
+                    umidadeDiv.textContent = `Umidade: ${data.umidade} Kg/m³`;
                 })
                 .catch(error => {
                     console.error('Erro ao obter umidade: ', error);
@@ -142,7 +161,7 @@
             getTemperature();
             getHumidity();
             getLuminosidade();
-        }, 10000); // 10 segundos em milissegundos
+        }, 1000); // 10 segundos em milissegundos
     </script>    
 </body>
 </html>
