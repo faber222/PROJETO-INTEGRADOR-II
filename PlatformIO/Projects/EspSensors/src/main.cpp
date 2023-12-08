@@ -20,9 +20,9 @@ unsigned long lastMsg = 0;
 char msg[0];
 int value = 0;
 
-const char* ssid = "Familia Fonseca";
-const char* password = "aflf1950";
-const char* mqtt_server = "ec2-18-231-159-19.sa-east-1.compute.amazonaws.com";
+const char* ssid = "FABER";
+const char* password = "faber180975";
+const char* mqtt_server = "18.231.159.19";
 const char* mqtt_user = "esp";
 const char* mqtt_password = "espsensors";
 const char* tempTopic = "temperature";
@@ -31,15 +31,60 @@ const char* lumTopic = "lumens";
 const char* lampada = "lampada";
 const char* ar_condicionado = "ar_condicionado";
 const char* idEsp = "1234";
-const char* lampTopic;
-const char* arTopic;
+// const char* lampTopic;
+// const char* arTopic;
 const char* mensagemRecebida;
 const char* ack = "_status";
 const char* ackStatus;
+const char* statusAr;
+const char* statusLampada = "0";
+
+String lampTopic;
+String arTopic;
 
 WiFiServer server(80);
 WiFiClient espClient;
 PubSubClient client(espClient);
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Tópico recebido: ");
+  Serial.println(topic);
+
+  String message(reinterpret_cast< char* >(payload), length);
+  Serial.print("Mensagem recebida: ");
+  Serial.println(message);
+
+  mensagemRecebida = message.c_str();
+
+  // Lógica específica para o primeiro tópico
+  if (String(topic).equals(String(lampTopic))) {
+    // Faça algo específico para o tópico1
+    Serial.println("Lógica para o tópico1");
+    if (String(mensagemRecebida) == "0") {
+      statusLampada = "0";
+    } else if (String(mensagemRecebida) == "1") {
+      statusLampada = "1";
+    }
+  }
+  // Lógica específica para o segundo tópico
+  else if (String(topic).equals(String(arTopic))) {
+    // Faça algo específico para o tópico2
+    Serial.println("Lógica para o tópico2");
+    if (String(mensagemRecebida) == "0") {
+      statusAr = "0";
+    } else if (String(mensagemRecebida) == "1") {
+      statusAr = "1";
+    }
+  }
+
+  // delete[] mensagemRecebida;
+
+  String ackEspStatus = String(topic) + "" + String(ack);
+  ackStatus = ackEspStatus.c_str();
+
+  client.publish(ackStatus, "1");
+
+}
 
 void reconnect() {
   while (!client.connected()) {
@@ -48,8 +93,8 @@ void reconnect() {
     // Tentativa de conexão
     if (client.connect("ESP32Client", mqtt_user, mqtt_password)) {
       Serial.println("Conectado");
-      client.subscribe(lampTopic);
-      client.subscribe(arTopic);
+      client.subscribe(lampTopic.c_str());
+      client.subscribe(arTopic.c_str());
     } else {
       Serial.print("Falha, rc=");
       Serial.print(client.state());
@@ -57,86 +102,6 @@ void reconnect() {
       delay(5000);
     }
   }
-}
-
-void reconnect_wifi()
-{
-  /* se já está conectado a rede WI-FI, nada é feito.
-     Caso contrário, são efetuadas tentativas de conexão */
-  if (WiFi.status() == WL_CONNECTED)
-    return;
-
-  WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    delay(100);
-    Serial.print(".");
-  }
-
-  Serial.println();
-  Serial.print("Conectado com sucesso na rede ");
-  Serial.print(ssid);
-  Serial.println("IP obtido: ");
-  Serial.println(WiFi.localIP());
-}
-
-void verifica_conexoes_wifi_mqtt(void)
-{
-  /* se não há conexão com o WiFI, a conexão é refeita */
-  reconnect_wifi();
-  /* se não há conexão com o Broker, a conexão é refeita */
-  if (!client.connected())
-    reconnect();
-}
-
-void callback(char* topic, byte* payload, unsigned int length) {
-  Serial.print("Tópico recebido: ");
-  Serial.println(topic);
-  String message = "";
-  
-  // Copiar os dados do payload para a memória alocada dinamicamente
-  for (int i = 0; i < length; i++) {
-    message += static_cast<char>(payload[i]);
-  }
-  Serial.print("Mensagem recebida: ");
-  Serial.println(message);
-
-  mensagemRecebida = message.c_str();
-
-  // Lógica específica para o primeiro tópico
-  if (strcmp(topic, lampTopic) == 0) {
-    // Faça algo específico para o tópico1
-    Serial.println("Lógica para o tópico1");
-    if (strcmp("0", mensagemRecebida)) {
-      // desliga lampada
-    } else if (strcmp("1", mensagemRecebida)) {
-      // liga lampada
-    }
-  }
-  // Lógica específica para o segundo tópico
-  else if (strcmp(topic, arTopic) == 0) {
-    // Faça algo específico para o tópico2
-    Serial.println("Lógica para o tópico2");
-    if (strcmp("0", mensagemRecebida)) {
-      // desliga ar
-    } else if (strcmp("1", mensagemRecebida)) {
-      // liga ar
-    }
-  }
-  // // Tamanho total necessário para a nova string
-  // size_t tamanhoAck = strlen(topic) + strlen(ack) + 1;
-  // // Alocar memória para a nova string
-  // char* bufferAck = new char[tamanhoAck];
-  // // Copiar a primeira string para o resultado
-  // strlcpy(bufferAck, topic, tamanhoAck);
-  // // Concatenar a segunda string no resultado
-  // strlcat(bufferAck, ack, tamanhoAck);
-  String ackEspStatus = String(topic) + "" + String(ack);
-  ackStatus = ackEspStatus.c_str();
-
-  client.publish(ackStatus, "True");
-  // delete[] bufferAck;
 }
 
 void setup() {
@@ -157,31 +122,15 @@ void setup() {
   server.begin();
   client.setServer(mqtt_server, 1883);
 
-  // // Tamanho total necessário para a nova string
-  // size_t tamanhoTotal1 = strlen(idEsp) + strlen(lampada) + 1;
-  // // Tamanho total necessário para a nova string
-  // size_t tamanhoTotal2 = strlen(idEsp) + strlen(ar_condicionado) + 1;
-  // // Alocar memória para a nova string
-  // char* buffer1 = new char[tamanhoTotal1];
-  // // Alocar memória para a nova string
-  // char* buffer2 = new char[tamanhoTotal2];
-
-  // // Copiar a primeira string para o resultado
-  // strlcpy(buffer1, idEsp, tamanhoTotal1);
-  // // Concatenar a segunda string no resultado
-  // strlcat(buffer1, lampada);
-  // // Copiar a primeira string para o resultado
-  // strlcpy(buffer2, idEsp);
-  // // Concatenar a segunda string no resultado
-  // strlcat(buffer2, ar_condicionado);
-
   String lampadaTopic = String(idEsp) + "" + String(lampada);
   String arCondTopic = String(idEsp) + "" + String(ar_condicionado);
-  lampTopic = lampadaTopic.c_str();
-  arTopic = lampadaTopic.c_str();
+  Serial.println(lampadaTopic);
+  Serial.println(arCondTopic);
+  lampTopic = lampadaTopic;
+  arTopic = arCondTopic;
 
-  client.subscribe(lampTopic);
-  client.subscribe(lampTopic);
+  client.subscribe(lampTopic.c_str());
+  client.subscribe(arTopic.c_str());
 
   client.setCallback(callback);
 
@@ -193,24 +142,62 @@ void setup() {
   ldr.configure();
   ldr.calibragem();
   pinMode(2, OUTPUT); // Configurando o pino D12 como saída
+  reconnect();
+}
+
+void reconnect_wifi() {
+  /* se já está conectado a rede WI-FI, nada é feito.
+     Caso contrário, são efetuadas tentativas de conexão */
+  if (WiFi.status() == WL_CONNECTED)
+    return;
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(100);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.print("Conectado com sucesso na rede ");
+  Serial.print(ssid);
+  Serial.println("IP obtido: ");
+  Serial.println(WiFi.localIP());
+}
+
+void verifica_conexoes_wifi_mqtt(void) {
+  /* se não há conexão com o WiFI, a conexão é refeita */
+  reconnect_wifi();
+  /* se não há conexão com o Broker, a conexão é refeita */
+  if (!client.connected())
+    reconnect();
 }
 
 void loop() {
   verifica_conexoes_wifi_mqtt();
 
-  if (!client.connected()) {
-    reconnect();
-  }
+  Temperature = tempUmi.temperatura();
+  Humidity = tempUmi.umidade();
 
   Serial.print("Temperatura: ");
-  Serial.println(tempUmi.temperatura());
-  Serial.print("ºC");
-  Serial.println("");
+  Serial.print(Temperature);
+  Serial.println("ºC");
 
   Serial.print("Umidade: ");
-  Serial.println(tempUmi.umidade());
-  Serial.print("g/m³");
-  Serial.println("");
+  Serial.print(Humidity);
+  Serial.println("g/m³");
+
+  Serial.print("Luminosidade: ");
+  if (Luminosity == 1) {
+    Serial.println("Claro");
+  } else {
+    Serial.println("Escuro");
+  }
+  
+  Serial.println(Luminosity);
+  Serial.println(lampTopic);
+  Serial.println(arTopic);
 
   randomSeed(micros());
 
@@ -219,51 +206,42 @@ void loop() {
   if (now - lastMsg > 2000) {
     lastMsg = now;
     ++value;
-    Serial.print("Publicando mensagem: ");
-    Serial.println(msg);
-    // client.publish(topic, msg);
 
     if (ldr.getStatus()) {
-      if (msg[0] == '1') {
-        Serial.println("LUZ LIGADAAAAA");
-        digitalWrite(2, HIGH);
-      } else {
-        Serial.println("LUZ DESLIGADAAAAA");
-        digitalWrite(2, LOW);
-      }
+      Luminosity = 1;
+    } else {
+      Luminosity = 0;
     }
   }
+  if (( String ) statusLampada == "1") {
+    Serial.println("LUZ LIGADAAAAA");
+    digitalWrite(2, HIGH);
+  } else if (( String ) statusLampada == "0") {
+    Serial.println("LUZ DESLIGADAAAAA");
+    digitalWrite(2, LOW);
+  }
+
   Serial.print("Valor base: ");
   Serial.println(ldr.obtemValorBase());
 
   Serial.print("Valor atual: ");
   Serial.println(ldr.medidaAnalog());
 
-  Serial.println("\n");
-
-  delay(500);
-
   char tempString[8];
   char humString[8];
-  char lumString[8];
-
 
   dtostrf(Temperature, 1, 2, tempString);
   dtostrf(Humidity, 1, 2, humString);
-  dtostrf(Luminosity, 1, 2, lumString);
 
-  String payload = String("Temperature: ") + String(tempString) + "°C, Humidity: " + String(humString) + "%, Ligado: " + String(lumString);
   String payloadTemp = String(idEsp) + ";" + String(tempString);
   String payloadHumidity = String(idEsp) + ";" + String(humString);
-  String payloadLuminosity = String(idEsp) + ";" + String(lumString);
+  String payloadLuminosity = String(idEsp) + ";" + String(Luminosity);
 
   client.publish(tempTopic, ( char* ) payloadTemp.c_str());
   client.publish(humidityTopic, ( char* ) payloadHumidity.c_str());
   client.publish(lumTopic, ( char* ) payloadLuminosity.c_str());
 
   client.loop();
-  delete[] arTopic;
-  delete[] lampTopic;
-  delay(pow(10, 4));
+  delay(pow(10, 3));
 
 }
