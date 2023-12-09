@@ -17,27 +17,24 @@ float Humidity;
 float Luminosity;
 
 unsigned long lastMsg = 0;
-char msg[0];
 int value = 0;
 
-const char* ssid = "FABER";
-const char* password = "faber180975";
-const char* mqtt_server = "18.231.159.19";
-const char* mqtt_user = "esp";
-const char* mqtt_password = "espsensors";
-const char* tempTopic = "temperature";
-const char* humidityTopic = "humidity";
-const char* lumTopic = "lumens";
-const char* lampada = "lampada";
-const char* ar_condicionado = "ar_condicionado";
-const char* idEsp = "1234";
-// const char* lampTopic;
-// const char* arTopic;
+const char* ssid = "{WIRELESS_SSID}";
+const char* password = "{WIRELESS_PASSWD}";
+const char* mqtt_server = "{MQTT_IP}";
+const char* mqtt_user = "{MQTT_USER}";
+const char* mqtt_password = "{MQTT_PASSWD}";
+const char* tempTopic = "{TEMP_TOPIC}";
+const char* humidityTopic = "{HUMIDY_TOPIC}";
+const char* lumTopic = "{LUMENS_TOPIC}";
+const char* lampada = "{LAMP_TOPIC}";
+const char* ar_condicionado = "{AIR_TOPIC}";
+const char* idEsp = "{ESP_ID}";
 const char* mensagemRecebida;
 const char* ack = "_status";
 const char* ackStatus;
 const char* statusAr;
-const char* statusLampada = "0";
+const char* statusLampada;
 
 String lampTopic;
 String arTopic;
@@ -56,28 +53,20 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
   mensagemRecebida = message.c_str();
 
-  // Lógica específica para o primeiro tópico
   if (String(topic).equals(String(lampTopic))) {
-    // Faça algo específico para o tópico1
-    Serial.println("Lógica para o tópico1");
     if (String(mensagemRecebida) == "0") {
       statusLampada = "0";
     } else if (String(mensagemRecebida) == "1") {
       statusLampada = "1";
     }
   }
-  // Lógica específica para o segundo tópico
   else if (String(topic).equals(String(arTopic))) {
-    // Faça algo específico para o tópico2
-    Serial.println("Lógica para o tópico2");
     if (String(mensagemRecebida) == "0") {
       statusAr = "0";
     } else if (String(mensagemRecebida) == "1") {
       statusAr = "1";
     }
   }
-
-  // delete[] mensagemRecebida;
 
   String ackEspStatus = String(topic) + "" + String(ack);
   ackStatus = ackEspStatus.c_str();

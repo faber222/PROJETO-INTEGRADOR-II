@@ -1082,3 +1082,38 @@ To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
 1702001896: mosquitto version 2.0.18 running
 1702001929: mosquitto version 2.0.18 terminating
 1702001929: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1702039497: mosquitto version 2.0.18 starting
+1702039497: Config loaded from /mosquitto/config/mosquitto.conf.
+1702039497: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1702039497: Opening ipv4 listen socket on port 1883.
+1702039497: mosquitto version 2.0.18 running
+1702041298: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1702043099: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1702044900: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1702046130: mosquitto version 2.0.18 terminating
+1702046130: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1702057437: mosquitto version 2.0.18 starting
+1702057437: Config loaded from /mosquitto/config/mosquitto.conf.
+1702057437: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1702057437: Opening ipv4 listen socket on port 1883.
+1702057437: mosquitto version 2.0.18 running
+1702058080: mosquitto version 2.0.18 terminating
+1702058080: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1702069551: mosquitto version 2.0.18 starting
+1702069551: Config loaded from /mosquitto/config/mosquitto.conf.
+1702069551: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1702069551: Opening ipv4 listen socket on port 1883.
+1702069551: mosquitto version 2.0.18 running
+1702069837: mosquitto version 2.0.18 terminating
+1702069837: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1702115661: mosquitto version 2.0.18 starting
+1702115661: Config loaded from /mosquitto/config/mosquitto.conf.
+1702115661: Warning: File /mosquitto/config/passwords.txt has world readable permissions. Future versions will refuse to load this file.
+To fix this, use `chmod 0700 /mosquitto/config/passwords.txt`.
+1702115661: Opening ipv4 listen socket on port 1883.
+1702115661: mosquitto version 2.0.18 running
+1702117462: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1702119263: Saving in-memory database to /mosquitto/data//mosquitto.db.

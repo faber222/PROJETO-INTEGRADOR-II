@@ -12,11 +12,11 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 public class MQTTSubscriber {
-    private static final String broker = "tcp://18.231.159.19:1883";
-    private static final String topic = "temperature";
+    private static final String broker = "tcp://{MYSQL_IP}:1883";
+    private static final String topic = "{MQTT_TOPIC}";
     private static final String dbUrl = "jdbc:mysql://localhost:3306/teste_local";
-    private static final String dbUser = "root";
-    private static final String dbPassword = "F!a@180975";
+    private static final String dbUser = "{MYSQL_USER}";
+    private static final String dbPassword = "{MYSQL_PWD}";
 
     public void executar() {
         try {
